@@ -1,0 +1,58 @@
+// Common styles of the project
+
+html
+,body {
+    height: 100%;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+body > .container-fluid {
+    padding: 0;
+}
+div.row {
+    margin: 0;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+.hideOverflow {
+    overflow: hidden;
+}
+header.row {
+    margin: 0;
+}
+
+.wrap__pic img {
+    width: 100%;
+    height: auto;
+}
+
+.container-wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    height: 100%;
+    min-height: inherit;
+    padding: 0 5px;
+    overflow: hidden;
+}
+
+.relative {
+    position: relative;
+}
+.none {
+    display: none;
+}
+
+
+@media screen and (max-width:767px) {
+    html {
+        font-size: 20px !important;
+    }
+}
+

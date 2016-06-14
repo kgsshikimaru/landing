@@ -1,0 +1,250 @@
+/*=================================================
+=            head__soc & head__address            =
+=================================================*/
+.header__container {
+    display: flex;
+
+    width: 100%;
+    min-width: 100%;
+    @media screen and (max-width:767px) {
+        flex-direction: column;
+        .head__soc {
+            padding-top: .5rem;
+        }
+    }
+}
+
+.head__soc {
+    background-color: #a0db64;
+
+    min-width: 38%;
+    &_list {
+        margin: 0 0 .6rem 0;
+        padding: .5% 28.8% 0 0;
+
+        text-align: right;
+        @media screen and (max-width:767px) {
+            padding: 0;
+
+            text-align: center;
+        }
+        li {
+            font-size: 1.438rem;
+            font-weight: 400;
+            line-height: 1.588rem;
+
+            display: inline-block;
+
+            padding: 0 .64rem;
+
+            color: rgb(107, 172, 41);
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.head__address {
+    background-color: $blue;
+
+    min-width: 62%;
+    &_container {
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-size: .938rem;
+        font-weight: 500;
+        line-height: 1.563rem;
+
+        display: flex;
+
+        margin: 0;
+        padding: 0 2.3rem 0 0;
+
+        color: white;
+
+        justify-content: center;;
+        @media screen and (max-width:767px) {
+            flex-direction: column;
+
+            padding: 0;
+
+            align-items: center;
+        }
+    }
+    &_info {
+        padding: .3rem 0 0 1.8rem;
+
+        letter-spacing: .09rem;
+        @media screen and (max-width:767px) {
+            padding: 0;
+        }
+    }
+    &__icon {
+        padding-right: .3rem;
+    }
+}
+/*=====  End of head__soc & head__address  ======*/
+
+/*===============================================
+=            logo, search, nav__menu            =
+===============================================*/
+.wrap_search-menu {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+
+    margin: .4rem 16.4% 0 0;
+
+    align-items: center;
+}
+
+.wrap_menu {
+    align-self: flex-start;
+    flex: 1 1 auto;
+}
+
+.header__wrapper {
+    display: flex;
+
+    border-bottom: .688rem solid $blue;
+}
+
+.logo__container {
+    display: flex;
+
+    flex: 1 1 auto;
+    justify-content: center;
+}
+
+.logo {
+    z-index: 1;
+
+    margin: 1% -3% 1% -1%;
+}
+.search {
+    z-index: 2;
+
+    width: 31rem;
+    margin: 0;
+    padding: 0 0 0 33%;
+    .search__btn {
+        padding: .38rem .5rem;
+    }
+}
+
+
+header nav.navbar {
+    width: 42.0rem;
+    margin: .1rem 0 0 -4%;
+    padding: 0 0 0 0;
+    @media screen and (max-width:767px) {
+        padding: 0;
+    }
+}
+header .navbar-nav .nav-item {
+    font-family: $Avenir;
+    font-size: .813rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+
+    margin: 0 0 0 .0rem;
+    padding: 0 0 0 0;
+
+    text-transform: uppercase;
+}
+header .navbar-nav .nav-item + .nav-item {
+    margin: 0 0 0 2.6rem;
+
+    color: #3c3c3c;
+}
+
+.search__btn {
+    transition: .2s;
+
+    background-color: $light-blue;
+    &:hover
+    ,&:focus {
+        background-color: $blue;
+    }
+}
+
+button.navbar-toggler {
+    font-size: 3rem;
+
+    margin: auto;
+
+    transition: .2s;
+
+    background-color: rgba(0, 0, 0, .17);
+    &:hover
+    ,&:focus {
+        background-color: rgba(0, 0, 0, .25);
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width:991px) {
+    .header__wrapper {
+        flex-direction: column;
+        .wrap_menu {
+            align-self: center;
+            flex: 1 1 auto;
+        }
+    }
+    .wrap_search-menu {
+        margin: .4rem auto 0 auto;
+        padding: 0;
+    }
+
+    .search {
+        width: 44.0rem;
+        padding: 0 14% 0 0;
+    }
+
+    header ul.navbar-nav .nav-item {
+        margin: 0 0 0 1rem;
+    }
+}
+
+
+@media screen and (max-width:767px) {
+    .search {
+        width: 90%;
+        margin: 0;
+        padding: 0 0 .1rem 0;
+    }
+
+    .header__wrapper {
+        padding-bottom: .1rem;
+    }
+
+
+    .navbar-toggler__wrapper {
+        display: flex;
+
+        width: 100%;
+    }
+
+    header nav.navbar {
+        width: auto;
+    }
+    header .navbar-nav {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+    header ul.navbar-nav li.nav-item {
+        margin: 0;
+        padding: 0;
+    }
+    header .navbar-nav .nav-item + .nav-item {
+        margin: 0;
+        padding: 0;
+    }
+}
+/*=====  End of logo, search, nav__menu  ======*/

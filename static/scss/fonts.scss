@@ -1,0 +1,138 @@
+/* Your custom fonts here */
+
+/* Example
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/Custom-Font.eot');
+    src: url('../fonts/Custom-Font.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Custom-Font.woff') format('woff'),
+         url('../fonts/Custom-Font.svg#custom_font') format('svg');
+    font-weight: 400;       // For normal width. It could has another value
+    font-style: normal;     // Also could has another value
+    }
+
+
+// Var for using custom font
+$CustomFont: 'CustomFont', Helvetica, Arial, sans-serif;
+*/
+
+@font-face {
+    font-family: 'Avenir';
+    font-weight: 400;       // For normal width. It could has another value
+    font-style: normal;     // Also could has another value
+
+    src: url('../fonts/Avenir/AvenirLTStd-Book.eot');
+    src: url('../fonts/Avenir/AvenirLTStd-Book.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Avenir/AvenirLTStd-Book.ttf') format('ttf'),
+    url('../fonts/Avenir/AvenirLTStd-Book.woff') format('woff'),
+    url('../fonts/Avenir/AvenirLTStd-Book.woff2') format('woff2'),
+    url('../fonts/Avenir/AvenirLTStd-Book.svg#custom_font') format('svg');
+}
+
+
+// Var for using custom font
+
+
+@font-face {
+    font-family: 'KlinicSlab';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/KlinicSlab/KlinicSlab-Light.eot');
+    src: url('../fonts/KlinicSlab/KlinicSlab-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/KlinicSlab/KlinicSlab-Light.ttf') format('ttf'),
+    url('../fonts/KlinicSlab/KlinicSlab-Light.woff') format('woff'),
+    url('../fonts/KlinicSlab/KlinicSlab-Light.woff2') format('woff2'),
+    url('../fonts/KlinicSlab/KlinicSlab-Light.svg#') format('svg');
+}
+
+@font-face {
+    font-family: 'KlinicSlab-Light';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/KlinicSlab-Light/KlinicSlab-Light.eot');
+    src: url('../fonts/KlinicSlab-Light/KlinicSlab-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/KlinicSlab-Light/KlinicSlab-Light.ttf') format('ttf'),
+    url('../fonts/KlinicSlab-Light/KlinicSlab-Light.woff') format('woff'),
+    url('../fonts/KlinicSlab-Light/KlinicSlab-Light.woff2') format('woff2'),
+    url('../fonts/KlinicSlab-Light/KlinicSlab-Light.svg#') format('svg');
+}
+
+@font-face {
+    font-family: 'KlinicSlab-Book';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/KlinicSlab-Book/KlinicSlab-Book.eot');
+    src: url('../fonts/KlinicSlab-Book/KlinicSlab-Book.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/KlinicSlab-Book/KlinicSlab-Book.ttf') format('ttf'),
+    url('../fonts/KlinicSlab-Book/KlinicSlab-Book.woff') format('woff'),
+    url('../fonts/KlinicSlab-Book/KlinicSlab-Book.woff2') format('woff2'),
+    url('../fonts/KlinicSlab-Book/KlinicSlab-Book.svg#') format('svg');
+}
+
+@font-face {
+    font-family: 'KlinicSlab-Bold';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/KlinicSlab-Bold/KlinicSlab-Bold.eot');
+    src: url('../fonts/KlinicSlab-Bold/KlinicSlab-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/KlinicSlab-Bold/KlinicSlab-Bold.ttf') format('ttf'),
+    url('../fonts/KlinicSlab-Bold/KlinicSlab-Bold.woff') format('woff'),
+    url('../fonts/KlinicSlab-Bold/KlinicSlab-Bold.woff2') format('woff2'),
+    url('../fonts/KlinicSlab-Bold/KlinicSlab-Bold.svg#') format('svg');
+}
+
+@font-face {
+    font-family: 'HeliumSerial';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/HeliumSerial/HeliumSerial.eot');
+    src: url('../fonts/HeliumSerial/HeliumSerial.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HeliumSerial/HeliumSerial.ttf') format('ttf'),
+    url('../fonts/HeliumSerial/HeliumSerial.woff') format('woff'),
+    url('../fonts/HeliumSerial/HeliumSerial.woff2') format('woff2'),
+    url('../fonts/HeliumSerial/HeliumSerial.svg#') format('svg');
+}
+
+@font-face {
+    font-family: 'MyriadPro-Semibold';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/MyriadPro-Semibold/MyriadPro-Semibold.eot');
+    src: url('../fonts/MyriadPro-Semibold/MyriadPro-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/MyriadPro-Semibold/MyriadPro-Semibold.ttf') format('ttf'),
+    url('../fonts/MyriadPro-Semibold/MyriadPro-Semibold.woff') format('woff'),
+    url('../fonts/MyriadPro-Semibold/MyriadPro-Semibold.woff2') format('woff2'),
+    url('../fonts/MyriadPro-Semibold/MyriadPro-Semibold.svg#') format('svg');
+}
+
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/MyriadPro-Regular/MyriadPro-Regular.eot');
+    src: url('../fonts/MyriadPro-Regular/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/MyriadPro-Regular/MyriadPro-Regular.ttf') format('ttf'),
+    url('../fonts/MyriadPro-Regular/MyriadPro-Regular.woff') format('woff'),
+    url('../fonts/MyriadPro-Regular/MyriadPro-Regular.woff2') format('woff2'),
+    url('../fonts/MyriadPro-Regular/MyriadPro-Regular.svg#') format('svg');
+}
+
+
+
+
+$Avenir: Avenir, Helvetica, Arial, sans-serif;
+$KlinicSlab: KlinicSlab, Helvetica, Arial, sans-serif;
+$KlinicSlab-Light: 'KlinicSlab-Light', Helvetica, Arial, sans-serif;
+$KlinicSlab-Book: 'KlinicSlab-Book', Helvetica, Arial, sans-serif;
+$KlinicSlab-Bold: 'KlinicSlab-Bold', Helvetica, Arial, sans-serif;
+$HeliumSerial: 'HeliumSerial', Helvetica, Arial, sans-serif;
+$MyriadPro-Regular: 'MyriadPro-Regular', Helvetica, Arial, sans-serif;
+$MyriadPro-Semibold: 'MyriadPro-Semibold', Helvetica, Arial, sans-serif;

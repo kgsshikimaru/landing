@@ -1,0 +1,8 @@
+//- class for debug coloration
+@for $i from 1 through 15
+{
+    .debug-#{$i}
+    {
+        background-color: hsla($i * 30, 100%, 40%, .2);
+    }
+}

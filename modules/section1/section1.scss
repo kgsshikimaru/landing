@@ -1,0 +1,155 @@
+/*=========================================
+=            picture with girl            =
+=========================================*/
+
+.moreInfo {
+    position: absolute;
+    top: 33%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    h1 {
+        font-family: $KlinicSlab-Bold;
+        font-size: 3.5rem;
+        line-height: 1.625rem;
+    }
+    h3 {
+        font-family: $KlinicSlab-Book;
+        font-size: 1.875rem;
+        line-height: 1.563rem;
+        margin-bottom: 1.6rem;
+        text-align: center;
+    }
+    &__wrap-a {
+        position: relative;
+        left: 29%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15rem;
+        height: 3.6rem;
+        transition: .2s;
+        border: .063rem solid white;
+        border-radius: .188rem;
+        justify-content: center;
+        align-items: center;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, .45);
+        }
+    }
+    a {
+        font-family: $MyriadPro-Regular;
+        font-size: 1.063rem;
+        line-height: 3.6rem;
+        display: block;
+        margin: auto;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .s1-container-wrapper-out {
+        padding: 1rem;
+    }
+    .s1-container-wrapper {
+        border: 0.2rem solid rgba(37, 125, 44, 0.20);
+        border-radius: 16%;
+        box-shadow: inset 0px 0px 109px 6px rgba(0, 0, 0, 0.75);
+    }
+    .moreInfo {
+        margin: 2%;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        color: $grey;
+        &__wrap-a {
+            position: relative;
+        }
+        a {
+            color: $grey;
+        }
+        h1 {
+            font-size: 3rem;
+            line-height: 2.625rem;
+        }
+        &__wrap-a {
+            width: 75%;
+            margin: auto;
+            left: 0;
+            border: .063rem solid #9a9;
+            box-shadow: inset 0px 0px 109px 6px rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
+@media screen and (max-width:515px) {
+    .moreInfo {
+        h1 {
+            font-size: 2rem;
+            line-height: 2.625rem;
+            padding-left: 0;
+            text-align: center;
+        }
+        h3 {
+            font-size: 1.475rem;
+            line-height: 1.563rem;
+            padding-left: 0;
+        }
+    }
+}
+
+.icon01 {
+    @include bg-svg($icon01);
+}
+
+.icon02 {
+    @include bg-svg($icon02);
+}
+
+.icon03 {
+    @include bg-svg($icon03);
+}
+
+.icon04 {
+    @include bg-svg($icon04);
+}
+
+.s1-wrap__icon {
+    background-color: #42af43;
+    position: relative;
+}
+
+.sec-1__icons__contain {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem 6.6rem 1rem 1rem;
+    &__icon {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__text {
+        color: white;
+        font-family: $KlinicSlab-Book;
+        font-size: 2rem;
+        line-height: 2.25rem;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .sec-1__icons__contain {
+        padding: 0;
+    }
+}
+
+
+/*=====  End of picture with girl  ======*/

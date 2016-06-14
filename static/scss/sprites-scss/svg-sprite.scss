@@ -1,0 +1,37 @@
+  $icon05: -4px -4px 151px 77px 159px 1546px './test.svg' 'icon05';
+  $icon08: -4px -85px 144px 58px 159px 1546px './test.svg' 'icon08';
+  $icon14: -4px -147px 95px 124px 159px 1546px './test.svg' 'icon14';
+  $icon10: -4px -275px 124px 79px 159px 1546px './test.svg' 'icon10';
+  $icon07: -4px -358px 116px 83px 159px 1546px './test.svg' 'icon07';
+  $icon02: -4px -445px 115px 84px 159px 1546px './test.svg' 'icon02';
+  $icon03: -4px -533px 105px 84px 159px 1546px './test.svg' 'icon03';
+  $icon04: -4px -621px 105px 84px 159px 1546px './test.svg' 'icon04';
+  $icon01: -4px -709px 105px 84px 159px 1546px './test.svg' 'icon01';
+  $icon09: -4px -797px 79px 83px 159px 1546px './test.svg' 'icon09';
+  $icon15: -4px -884px 82px 47px 159px 1546px './test.svg' 'icon15';
+  $icon11: -4px -935px 80px 68px 159px 1546px './test.svg' 'icon11';
+  $icon06: -4px -1007px 58px 71px 159px 1546px './test.svg' 'icon06';
+  $icon16: -4px -1082px 61px 62px 159px 1546px './test.svg' 'icon16';
+  $icon17: -4px -1148px 61px 62px 159px 1546px './test.svg' 'icon17';
+  $icon18: -4px -1214px 61px 62px 159px 1546px './test.svg' 'icon18';
+  $icon19: -4px -1280px 61px 62px 159px 1546px './test.svg' 'icon19';
+  $icon20: -4px -1346px 52px 52px 159px 1546px './test.svg' 'icon20';
+  $icon21: -4px -1402px 52px 52px 159px 1546px './test.svg' 'icon21';
+  $icon13: -4px -1458px 36px 40px 159px 1546px './test.svg' 'icon13';
+  $icon12: -4px -1502px 28px 40px 159px 1546px './test.svg' 'icon12';
+
+
+
+@mixin svg-sprite-position($svg-sprite) {
+  $svg-sprite-offset-x: nth($svg-sprite, 1);
+  $svg-sprite-offset-y: nth($svg-sprite, 2);
+  background-position: $svg-sprite-offset-x  $svg-sprite-offset-y;
+}
+
+@mixin bg-svg($svg-sprite, $repeat: no-repeat) {
+    background-image: url('%=static=%svg-sprite/sprite.svg');
+    @include svg-sprite-position($svg-sprite);
+    width: nth($svg-sprite, 3);
+    height: nth($svg-sprite, 4);
+    background-repeat: $repeat;
+}
