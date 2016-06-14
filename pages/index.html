@@ -7,22 +7,22 @@
 
 <body class="page">
     %=symbols=%
-    <div class="container-fluid">
-        <!-- Include your modules here -->
-        {{> header/header}} {{> section1/section1}}
-        <!-- responsive img - adaptive retina. Imitate background -->
-        {{> section2/section2}}
-        <!-- tabs - list-img-description -->
-        {{> section3/section3}}
-        <!-- 2d & 3d slider's -->
-        {{> section4/section4}}
-        <!-- form's -->
-        {{> section5/section5}}
-        <!-- cart's , slider -->
-        <footer>
-            {{> section6/section6}}
-        </footer>
-    </div>
+    <header>
+        {{> header/header}}
+    </header>
+    {{> section1/section1}}
+    <!-- responsive img - adaptive retina. Imitate background -->
+    {{> section2/section2}}
+    <!-- tabs - list-img-description -->
+    {{> section3/section3}}
+    <!-- 2d & 3d slider's -->
+    {{> section4/section4}}
+    <!-- form's -->
+    {{> section5/section5}}
+    <!-- cart's , slider -->
+    <footer>
+        {{> section6/section6}}
+    </footer>
     <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
     <script>
     svg4everybody();

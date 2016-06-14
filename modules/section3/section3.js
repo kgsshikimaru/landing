@@ -443,8 +443,8 @@ $(window).on('load', function() {
 
 /*=====  End of 2D slider  ======*/
 
-$(window).resize(function(){
-window.setTimeout('location.reload()', 500);
-});
+// $(window).resize(function(){
+// window.setTimeout('location.reload()', 500);
+// });
 
 

@@ -25,49 +25,28 @@
 <!-- /*===============================================
 =            logo, search, nav__menu            =
 ===============================================*/ -->
-<header class="header__wrapper row clearfix">
-    <div class="logo__container col-lg-3 ">
+<div class="header__wrapper">
+    <div class="logo__container">
         <img src="/static/img/assets/header/logo.svg" alt="logo" class="logo">
     </div>
-    <div class="wrap_search-menu">
-        <form class="input-group search">
-            <input type="text" class="form-control" placeholder="Skills Search..." name="srch-term" id="srch-term">
-            <div class="input-group-btn">
-                <button class="btn search__btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </div>
-        </form>
-        <div class="col-lg-6 wrap_menu">
-            <nav class="navbar navbar-light">
-                <div class="navbar-toggler__wrapper">
-                    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#navbar">
-                    &#9776;
-                </button>
-                </div>
+</div>
 
-                <div class="collapse navbar-toggleable-sm" id="navbar">
-                    <ul class="nav navbar-nav hideOverflow">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#home">home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#standards">standards</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#research">research</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#quick-tour">quick tour</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#free-trial">free trial</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+<div class="menu__container">
+    <div class="menu__container__search">
+        <form action="#" class="menu__container__search__button-wrapper">
+            <input type="text" placeholder="Skills Search..." class="menu__container__search__button-wrapper__text">
+            <button type="submit" class="menu__container__search__button-wrapper__button"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
     </div>
-</header>
+    <div class="menu__container__navigation">
+        <ul>
+            <li>home</li>
+            <li>standards</li>
+            <li>research</li>
+            <li>quick tour</li>
+            <li>free trial</li>
+            <li>contact</li>
+        </ul>
+    </div>
+</div>
 <!-- /*=====  End of logo, search, nav__menu  ======*/ -->
