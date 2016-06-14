@@ -4,10 +4,10 @@
 <div class="header__container">
     <div class="head__soc">
         <ul class="head__soc_list">
-            <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-            <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
-            <li><i class="fa fa-pinterest" aria-hidden="true"></i></li>
-            <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+            <li><a href="#facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            <li><a href="#instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
         </ul>
     </div>
     <div class="head__address">
@@ -29,24 +29,26 @@
     <div class="logo__container">
         <img src="/static/img/assets/header/logo.svg" alt="logo" class="logo">
     </div>
-</div>
-
-<div class="menu__container">
-    <div class="menu__container__search">
-        <form action="#" class="menu__container__search__button-wrapper">
-            <input type="text" placeholder="Skills Search..." class="menu__container__search__button-wrapper__text">
-            <button type="submit" class="menu__container__search__button-wrapper__button"><i class="fa fa-search" aria-hidden="true"></i></button>
-        </form>
-    </div>
-    <div class="menu__container__navigation">
-        <ul>
-            <li>home</li>
-            <li>standards</li>
-            <li>research</li>
-            <li>quick tour</li>
-            <li>free trial</li>
-            <li>contact</li>
-        </ul>
+    <div class="menu__container">
+        <div class="menu__container__search">
+            <form action="#" class="menu__container__search__button-wrapper">
+                <input type="text" name="search-text" placeholder="Skills Search..." class="menu__container__search__button-wrapper__text">
+                <button type="submit" class="menu__container__search__button-wrapper__button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+        <div class="menu__container__activate-menu">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+        <div class="menu__container__navigation">
+            <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#standards">standards</a></li>
+                <li><a href="#research">research</a></li>
+                <li><a href="#quick-tour">quick tour</a></li>
+                <li><a href="#free-trial">free trial</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 <!-- /*=====  End of logo, search, nav__menu  ======*/ -->

@@ -1,3 +1,10 @@
+.header__wrapper {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 0.9rem solid $blue;
+}
+
+
 /*=================================================
 =            head__soc & head__address            =
 =================================================*/
@@ -32,7 +39,7 @@
             display: inline-block;
             padding: 0 .64rem;
             color: rgb(107, 172, 41);
-            &:hover {
+            a:hover {
                 color: #fff;
             }
         }
@@ -81,8 +88,7 @@
 
 .logo__container {
     display: flex;
-    flex: 1 1 auto;
-    justify-content: center;
+    padding-left: 5.6%;
 }
 
 .logo {
@@ -91,29 +97,38 @@
 }
 
 .menu__container {
+    position: relative;
     display: flex;
-    justify-content: center;
-
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.7rem;
+    &__activate-menu {
+        font-size: 3rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        display: none;
+    }
     &__search {
         font-family: $Avenir;
-    font-size: 0.85rem;
-    font-weight: 300;
-    line-height: 1.5rem;
+        font-size: 0.85rem;
+        font-weight: 300;
+        line-height: 1.5rem;
         &__button-wrapper {
             position: relative;
             &__text {
-                padding:0 2.5rem 0 0.5rem;
+                padding: 0 2.5rem 0 0.3rem;
+                margin: 0 0rem 0 1.2rem;
                 border: 1px solid $grey;
                 border-radius: 3px;
                 height: 1.8rem;
-                width: 13.5rem;
+                width: 13.6rem;
             }
             &__button {
                 position: absolute;
-                top:-1px;
-                right:-1px;
+                top: -1px;
+                right: -1px;
                 height: 2rem;
-                width:2.2rem;
+                width: 2.2rem;
                 color: #fff;
                 padding: 0;
                 border: 0;
@@ -124,17 +139,91 @@
                     background-color: $blue;
                 }
             }
-
         }
     }
     &__navigation {
-
+        text-transform: uppercase;
+        width: 148%;
+        ul {
+            display: flex;
+            justify-content: center;
+            margin: 0.8rem 0 0.2rem 0;
+            .active {
+                position: relative;
+                text-shadow: 4px 4px 2px rgba(150, 150, 150, 0.3);
+                font-size: 1rem;
+            }
+            li {
+                font-family: $Avenir;
+                font-size: .813rem;
+                font-weight: 300;
+                line-height: 1.5rem;
+                padding: 0 1.3rem;
+                a {
+                    color: #3c3c3c;
+                    &:hover {
+                        color: #000;
+                    }
+                }
+            }
+        }
     }
 }
 
-@media screen and (max-width:991px) {}
+@media screen and (max-width:955px) {
+    .header__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
 
-@media screen and (max-width:767px) {}
+@media screen and (max-width:767px) {
+    .menu__container {
+
+        &__search {
+            width: 90%;
+            &__button-wrapper {
+                display: flex;
+                justify-content: center;
+                &__text {
+                    padding: 0 2rem 0 0.2rem;
+                    margin: 0;
+                    border: 1px solid $grey;
+                    border-radius: 3px;
+                    height: 1.8rem;
+                    width: 80%;
+                }
+                &__button {
+                    position: absolute;
+                    top: -1px;
+                    right: 1%;
+                    height: 2rem;
+                    width: 2.2rem;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+        &__activate-menu {
+            display: block;
+        }
+        &__navigation {
+            display: none;
+            width: 100%;
+            ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+}
 
 
 /*=====  End of logo, search, nav__menu  ======*/
