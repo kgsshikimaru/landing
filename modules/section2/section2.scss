@@ -14,13 +14,9 @@
 .wrap__section2__tabs {
     display: flex;
     padding-top: 10rem;
-}
-
-#tabs {
-    display: flex;
     justify-content: space-between;
-
 }
+
 .s2-li-wrapper {
     width: 25%;
         li,
@@ -73,7 +69,7 @@
     }
 }
 
-.wrap__section2__tabs .ui-tabs-active {
+.wrap__section2__tabs .active {
     position: relative;
     background-color: #3ecc39;
     @media screen and (min-width: 959px) {
@@ -115,8 +111,6 @@
     .wrap__section2__tabs {
         display: flex;
         padding-top: 0;
-    }
-    #tabs {
         width: 100%;
         display: flex;
         flex-direction: column;

@@ -1,2 +1,0 @@
-
-$("#login-tabs").tabs();
