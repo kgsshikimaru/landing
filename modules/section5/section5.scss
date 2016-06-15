@@ -258,6 +258,9 @@
 }
 
 @media screen and (max-width:479px) {
+    .absolute-bg-img {
+        display: none;
+    }
         .slider-of-responses-wrapper .slider-of-responses_navigation .icon16 {
         bottom: 58px ;
     }
@@ -273,8 +276,10 @@
 
     .slider-of-responses-wrapper .slider-of-responses__description div.icon15 {
         position: absolute;
-        top: 96.5%;
-        left: 50%;
+        top: 98%;
+        left: 48%;
+
+        @include bg-svg($icon15forSM);
     }
 }
 

@@ -36,7 +36,7 @@
         &:hover,
         &:focus {
             text-decoration: none;
-            background-color: rgba(0, 0, 0, .45);
+            background-color: #eee;
         }
     }
     a {
@@ -57,21 +57,19 @@
         padding: 1rem;
     }
     .s1-container-wrapper {
-        border: 0.2rem solid rgba(37, 125, 44, 0.20);
-        border-radius: 16%;
-        box-shadow: inset 0px 0px 109px 6px rgba(0, 0, 0, 0.75);
+
     }
     .moreInfo {
         margin: 2%;
         position: relative;
         justify-content: center;
         align-items: center;
-        color: $grey;
+        color: $blue;
         &__wrap-a {
             position: relative;
         }
         a {
-            color: $grey;
+            color: $blue;
         }
         h1 {
             font-size: 3rem;

@@ -32,7 +32,7 @@ setTimeout(function() {
 //////////////////////////////////////////////////////////////////////////////////////////
 function tabsGenerator([anchor, tabs, tabsPrefixByClass]) {
     for (let i = 0; i < arguments.length; i++) {
-        $(arguments[i][0]).click((e) => {
+        $(arguments[i][0]).on('click', (e) => {
             $(arguments[i][0]).parent().removeClass('active');
             $(e.currentTarget).parent().addClass('active');
             if (arguments.length === 1) return;
@@ -40,8 +40,8 @@ function tabsGenerator([anchor, tabs, tabsPrefixByClass]) {
                 $(e.currentTarget).attr('href').replace('#', arguments[i][2]))
                 .removeClass('none').siblings().addClass('none');
         });
-    };
-};
+    }
+}
 /*=============================================
 =            Section comment block            =
 =============================================

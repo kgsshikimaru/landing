@@ -1,20 +1,21 @@
 <div class="s4-wrapper">
     <div class="login-out-wrapper">
         <div class="login-wrapper">
-            <div class="login-wrapper__tabs-form" id="login-tabs">
-                <ul>
-                    <li><a href="#login-tabs-1">Sign Up</a></li>
-                    <li><a href="#login-tabs-2">Login Orchard Gold</a></li>
-                    <li><a href="#login-tabs-3">Orchard Now</a></li>
+            <div class="login-wrapper__tabs-form">
+                <ul class="login-wrapper__tabs-form__li-wrapper">
+                    <li><a href="#tab-1">Sign Up</a></li>
+                    <li><a href="#tab-2">Login Orchard Gold</a></li>
+                    <li><a href="#tab-3">Orchard Now</a></li>
                 </ul>
-                <div id="login-tabs-1" class="login-tabs_elem">
+                <div class="login-tabs-container">
+                    <div class="login-tab-1 login-tabs_elem">
                     <form action="#">
                         <input type="text" id="name-guest" placeholder="Name">
                         <input type="email" id="email-guest" placeholder="jane.doe@example.com">
                         <button type="submit" class="login-submit">Guest autorisation</button>
                     </form>
                 </div>
-                <div id="login-tabs-2" class="login-tabs_elem">
+                <div class="login-tab-2 login-tabs_elem none">
                     <form action="#">
                         <input type="email" id="email-guest" placeholder="jane.doe@example.com">
                         <input type="password" id="name-guest" placeholder="Password">
@@ -29,7 +30,7 @@
                         </div>
                     </form>
                 </div>
-                <div id="login-tabs-3" class="login-tabs_elem">
+                <div class="login-tab-3 login-tabs_elem none">
                     <form>
                         <input type="email" id="email-guest" placeholder="jane.doe@example.com">
                         <input type="password" id="name-guest" placeholder="Password">
@@ -75,6 +76,8 @@
                         <button type="submit" class="login-submit">Submit</button>
                     </form>
                 </div>
+                </div>
+
             </div>
         </div>
     </div>

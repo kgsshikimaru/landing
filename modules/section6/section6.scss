@@ -216,6 +216,9 @@
 
 
 @media screen and (max-width:1200px) {
+    .s6-background {
+        display: none;
+    }
     .s6-contain_info {
         flex-direction: column;
 

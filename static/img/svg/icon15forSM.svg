@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="51"
+   height="48"
+   viewBox="0 0 40.8 38.399998"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="icon15forSM.svg">
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     id="namedview7"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     units="px"
+     inkscape:zoom="4.0170213"
+     inkscape:cx="13.659957"
+     inkscape:cy="28.877117"
+     inkscape:window-x="0"
+     inkscape:window-y="1024"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <g
+     id="#00b1f4ff"
+     transform="matrix(0.49461105,0,0,1.6271186,0,-38.074573)">
+    <path
+       d="m 80.23,0 1.34,0 C 79.69,1.35 77.69,2.52 75.66,3.63 51.49,17.49 27.3,31.34 3.15,45.21 2.33,45.78 1.54,46.38 0.76,47 L 0,47 0,45.93 C 1.52,30.98 2.64,15.98 4,1.02 29.41,0.64 54.82,0.39 80.23,0 Z"
+       id="path5"
+       inkscape:connector-curvature="0"
+       style="opacity:1;fill:#00b1f4" />
+  </g>
+</svg>

@@ -22,6 +22,6 @@ $(window).on('resize', function() {
 
 /*=====  fix collapsed menu after <767px => open menu => close close
 =>     resize to large window
-                                                            ======*/
+==========================================================================*/
 
 
