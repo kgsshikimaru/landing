@@ -1,19 +1,21 @@
+.s6-wrapper {
+    position: relative;
+}
 
 
 .s6-contain-out {
-    position: absolute;
-    top: 5rem;
-    left: 0;
+    position: relative;
 
-    width: 100%;
-    height: auto;
+    background-image: url(/static/img/content/background-1920.jpg);
 }
+
 .s6-contain {
     display: flex;
     flex-direction: column;
 
     margin: auto;
 }
+
 .s6-contain_info {
     display: flex;
 
@@ -28,8 +30,10 @@
         font-family: 'Love Ya Like A Sister', cursive;
         font-size: 1.938rem;
         font-weight: 400;
-        line-height: 3.438rem;
 
+        position: relative;
+
+        padding-top: 6rem;
         padding-bottom: 2.3rem;
 
         color: white;
@@ -58,8 +62,8 @@
         ul {
             padding: 0;
         }
-        i.fa {
-            padding-right: 5px;
+        i {
+            padding-right: 7px;
         }
         li {
             font-family: Roboto;
@@ -159,13 +163,17 @@
             line-height: 3.438rem;
 
             color: #7c8587;
+            &:hover {
+                color: lighten(#7c8587, 20%);
+            }
         }
     }
 }
+
 .s6-contain_soc-wrapper {
-    position: absolute;
+    position: relative;
     right: 0;
-    bottom: -5rem;
+    bottom: 0;
     left: 0;
 
     display: flex;
@@ -179,13 +187,14 @@
 
         width: 59%;
         margin: auto;
-        padding-top: 2rem;
+        padding-top: 1.5rem;
 
         content: '';
 
         border-top: 2px solid #697274;
     }
 }
+
 .s6-contain_soc {
     display: flex;
 
@@ -213,8 +222,6 @@
     }
 }
 
-
-
 @media screen and (max-width:1200px) {
     .s6-background {
         display: none;
@@ -234,5 +241,27 @@
                 justify-content: space-around;
             }
         }
+        h1 {
+            color: $blue;
+            &:before {
+                display: none;
+            }
+            &:after {
+                position: absolute;
+                bottom: 1rem;
+                left: 20%;
+
+                margin-right: -2.5rem;
+                padding-right: 2.5rem;
+
+                content: '';
+
+                border-bottom: 2px solid #697274;
+            }
+        }
+    }
+    .s6-contain_soc-wrapper {
+        position: relative;
+        bottom: 0;
     }
 }
