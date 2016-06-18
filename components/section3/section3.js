@@ -1,3 +1,8 @@
+var slider = {};
+slider.state = (function() {
+    if ($(window).width() <= 1075) return "2d";
+    if ($(window).width() > 1075) return "3d";
+})();
 /*=================================
 =            3D slider            =
 =================================*/
@@ -443,8 +448,16 @@ $(window).on('load', function() {
 
 /*=====  End of 2D slider  ======*/
 
-// $(window).resize(function(){
-// window.setTimeout('location.reload()', 500);
-// });
+$(window).on('resize scroll', (function() {
+    if ($(document).scrollTop() + $(window).height() > $('#carousel').offset().top && $(document).scrollTop() - $('#carousel').offset().top < $('#carousel').height()) {
+        if (slider.state === '2d' && $(window).width() > 1075) {
+            slider.state = '3d';
+            window.setTimeout('location.reload()', 50);
+        }
+        if (slider.state === '3d' && $(window).width() <= 1075) {
+            slider.state = '2d';
+            window.setTimeout('location.reload()', 50);
+        }
+    }
 
-
+}));
