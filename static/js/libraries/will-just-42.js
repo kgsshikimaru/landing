@@ -30,7 +30,7 @@ setTimeout(function() {
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
-function tabsGenerator([anchor, tabs, tabsPrefixByClass]) {
+function tabsGenerator(/*[anchor, tabs, tabsPrefixByClass]*/) {
     for (let i = 0; i < arguments.length; i++) {
         $(arguments[i][0]).on('click', (e) => {
             $(arguments[i][0]).parent().removeClass('active');
