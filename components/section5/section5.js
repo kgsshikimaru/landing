@@ -1,14 +1,3 @@
-/*===============================================
-=            fix - absolute position            =
-===============================================*/
-
-/*$(window).on('load resize', function() {
-    setTimeout(function() {
-        $('.JQuerySynchro2').css('height', '').synchroHeight();
-    }, 100);
-})*/
-
-/*=====  End of fix - absolute position  ======*/
 /*==============================
   =            slider            =
   ==============================*/
@@ -25,7 +14,7 @@ $(window).on('load', function() {
         prevArrow: $('.icon16'),
         nextArrow: $('.icon17'),
         responsive: [{
-            breakpoint: 768,
+            breakpoint: 769,
             settings: {
                 slidesToShow: 1,
             }

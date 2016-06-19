@@ -150,7 +150,7 @@
             .active {
                 position: relative;
                 text-shadow: 4px 4px 2px rgba(150, 150, 150, 0.3);
-                font-size: 1rem;
+                transform: scale( 1.2);
             }
             li {
                 font-family: $Avenir;
@@ -169,6 +169,19 @@
     }
 }
 
+@media screen and (max-width:1260px) {
+    .menu__container {
+        &__navigation {
+            ul {
+                display: flex;
+                justify-content: center;
+                margin: 0.8rem 0 0.2rem 0;
+            }
+        }
+    }
+}
+
+
 @media screen and (max-width:955px) {
     .header__wrapper {
         display: flex;
@@ -178,10 +191,22 @@
 }
 
 @media screen and (max-width:767px) {
-    .menu__container {
 
+    .logo__container {
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .logo {
+        z-index: 1;
+        margin: 1% -3% 1% -1%;
+    }
+
+    .menu__container {
         &__search {
             width: 90%;
+            padding:0 0 1rem 0;
             &__button-wrapper {
                 display: flex;
                 justify-content: center;
@@ -202,13 +227,6 @@
                 }
             }
         }
-
-
-
-
-
-
-
 
         &__activate-menu {
             display: block;

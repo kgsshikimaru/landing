@@ -176,11 +176,13 @@
             div {
                 display: inline-flex;
                 flex-direction: column;
+                padding: 1.5rem 1rem;
                 h3 {
                     font-family: Roboto;
                     font-size: 1rem;
                     font-weight: 700;
-                    line-height: 2.063rem;
+                    line-height: 1.563rem;
+                    margin: 0;
 
                     text-transform: uppercase;
 
@@ -188,9 +190,10 @@
                 }
                 p {
                     font-family: Roboto;
+                    margin: 0;
                     font-size: 1rem;
                     font-weight: 400;
-                    line-height: 2.063rem;
+                    line-height: 1.563rem;
 
                     color: #dbdbdb;
                 }
@@ -200,7 +203,7 @@
     .slider-of-responses_navigation {
         .icon16 {
             position: absolute;
-            bottom: 58px;
+            bottom: 100px;
             left: 4px;
 
             @include bg-svg($icon16);
@@ -211,7 +214,7 @@
         .icon17 {
             position: absolute;
             right: 4px;
-            bottom: 58px;
+            bottom: 100px;
 
             @include bg-svg($icon17);
             &:hover {
@@ -221,6 +224,17 @@
     }
 }
 
+.slick-initialized div.slick-slide {
+    display: inline-flex;
+    padding-bottom: 4rem;
+}
+
+.slider-of-responses-wrapper .slider-of-responses_navigation .icon16 {
+    bottom: 200px ;
+}
+.slider-of-responses-wrapper .slider-of-responses_navigation .icon17 {
+    bottom: 200px;
+}
 
 @media screen and (max-width:1090px) {
     div.slider-of-responses-wrapper div.slider-of-responses__item {
@@ -228,12 +242,6 @@
         flex-direction: column;
     }
 
-    .slider-of-responses-wrapper .slider-of-responses_navigation .icon16 {
-        bottom: 110px ;
-    }
-    .slider-of-responses-wrapper .slider-of-responses_navigation .icon17 {
-        bottom: 110px;
-    }
 }
 
 @media screen and (max-width:768px) {
@@ -255,23 +263,27 @@
     .slider-of-responses-wrapper .slider-of-responses__description p {
         margin: 1.2rem 2.0rem;
     }
+
+
 }
 
-@media screen and (max-width:479px) {
+@media screen and (max-width:639px) {
     .absolute-bg-img {
         display: none;
     }
         .slider-of-responses-wrapper .slider-of-responses_navigation .icon16 {
-        bottom: 58px ;
+        bottom: 100px ;
     }
     .slider-of-responses-wrapper .slider-of-responses_navigation .icon17 {
-        bottom: 58px;
+        bottom: 100px;
     }
 
     div.slider-of-responses-wrapper div.slider-of-responses__item {
         flex-direction: column;
+        align-items: center;
+
         margin: 0;
-        padding: 0;
+        padding: 0 0 0 0;
     }
 
     .slider-of-responses-wrapper .slider-of-responses__description div.icon15 {
@@ -287,6 +299,10 @@
         .slider-of-responses-wrapper .slider-of-responses {
         padding: 3rem 0 1rem 3.5rem;
     }
+
+}
+
+@media screen and (max-width:1090px){
 
 }
 /*=====  End of sliders-of-responses  ======*/

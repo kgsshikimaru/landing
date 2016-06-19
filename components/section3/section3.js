@@ -1,13 +1,15 @@
+import {wj42} from 'static/js/libraries/will-just-42';
+
 var slider = {};
-slider.state = (function() {
-    if ($(window).width() <= 1075) return "2d";
-    if ($(window).width() > 1075) return "3d";
-})();
+if ($(window).width() <= 1075) {
+    slider.state = '2d';
+}
+if ($(window).width() > 1075) {
+    slider.state = '3d';
+}
 /*=================================
 =            3D slider            =
 =================================*/
-
-;
 (function($) {
     //
     // Detect CSS transform support
@@ -84,15 +86,15 @@ slider.state = (function() {
                 style.left = x + "px";
                 style.top = y + "px";
             }
-        }
-    }
+        };
+    };
 
     var time = !window.performance || !window.performance.now ?
         function() {
-            return +new Date()
+            return +new Date();
         } :
         function() {
-            return performance.now()
+            return performance.now();
         };
 
     //
@@ -135,7 +137,7 @@ slider.state = (function() {
 
         this.itemOptions = {
             transforms: options.transforms
-        }
+        };
 
         if (options.mirror) {
             this.itemOptions.mirror = $.extend({ gap: 2 }, options.mirror);
@@ -159,7 +161,7 @@ slider.state = (function() {
                 this.yOrigin + (scale * sin * this.yRadius),
                 scale
             );
-        }
+        };
 
         this.render = function() {
             var count = this.items.length;
@@ -173,7 +175,7 @@ slider.state = (function() {
 
             if (typeof this.onRendered === 'function')
                 this.onRendered(this);
-        }
+        };
 
         this.playFrame = function() {
             var rem = self.destRotation - self.rotation;
@@ -191,7 +193,7 @@ slider.state = (function() {
             }
 
             self.render();
-        }
+        };
 
         this.scheduleNextFrame = function() {
             this.lastTime = time();
@@ -199,11 +201,11 @@ slider.state = (function() {
             this.timer = this.smooth && cancelFrame ?
                 requestFrame(self.playFrame) :
                 setTimeout(self.playFrame, 1000 / this.fps);
-        }
+        };
 
         this.itemsRotated = function() {
             return this.items.length * ((Math.PI / 2) - this.rotation) / (2 * Math.PI);
-        }
+        };
 
         this.floatIndex = function() {
             var count = this.items.length;
@@ -211,25 +213,25 @@ slider.state = (function() {
 
             // Make sure float-index is positive
             return (floatIndex < 0) ? floatIndex + count : floatIndex;
-        }
+        };
 
         this.nearestIndex = function() {
             return Math.round(this.floatIndex()) % this.items.length;
-        }
+        };
 
         this.nearestItem = function() {
             return this.items[this.nearestIndex()];
-        }
+        };
 
         this.play = function() {
             if (this.timer === 0)
                 this.scheduleNextFrame();
-        }
+        };
 
         this.pause = function() {
             this.smooth && cancelFrame ? cancelFrame(this.timer) : clearTimeout(this.timer);
             this.timer = 0;
-        }
+        };
 
         //
         // Spin the carousel.  Count is the number (+-) of carousel items to rotate
@@ -237,7 +239,7 @@ slider.state = (function() {
         this.go = function(count) {
             this.destRotation += (2 * Math.PI / this.items.length) * count;
             this.play();
-        }
+        };
 
         this.deactivate = function() {
             this.pause();
@@ -245,14 +247,14 @@ slider.state = (function() {
             if (options.buttonLeft) options.buttonLeft.unbind('click');
             if (options.buttonRight) options.buttonRight.unbind('click');
             $container.unbind('.cloud9');
-        }
+        };
 
         this.autoPlay = function() {
             this.autoPlayTimer = setInterval(
-                function() { self.go(self.autoPlayAmount) },
+                function() { self.go(self.autoPlayAmount); },
                 this.autoPlayDelay
             );
-        }
+        };
 
         this.enableAutoPlay = function() {
             // Stop auto-play on mouse over
@@ -266,7 +268,7 @@ slider.state = (function() {
             });
 
             this.autoPlay();
-        }
+        };
 
         this.bindControls = function() {
             if (options.buttonLeft) {
@@ -314,7 +316,7 @@ slider.state = (function() {
                     }
                 });
             }
-        }
+        };
 
         var items = $container.find('.' + options.itemClass);
 
@@ -337,7 +339,7 @@ slider.state = (function() {
 
             // Disable click-dragging of items
             $container.bind('mousedown onselectstart', function() {
-                return false
+                return false;
             });
 
             if (this.autoPlayAmount !== 0) this.enableAutoPlay();
@@ -348,8 +350,8 @@ slider.state = (function() {
                 this.onLoaded(this);
         };
 
-        this.initTimer = setInterval(function() { self.finishInit() }, 50);
-    }
+        this.initTimer = setInterval(function() { self.finishInit(); }, 50);
+    };
 
     //
     // The jQuery plugin
@@ -376,7 +378,7 @@ slider.state = (function() {
 
             $(this).data(options.handle, new Carousel(this, options));
         });
-    }
+    };
 })(window.jQuery || window.Zepto);
 
 
@@ -386,9 +388,9 @@ slider.state = (function() {
 
 $(window).on('load', function() {
     if ($(window).width() > 1075) {
-        $('.2d-game-slider__item').removeClass('2d-game-slider__item')
+        $('.game-slider__item-2d').removeClass('game-slider__item-2d')
             .addClass('game-slider__item');
-        $("#carousel").removeClass('2d-game-slider')
+        $("#carousel").removeClass('game-slider-2d')
             .addClass('game-slider');
         $("#carousel").Cloud9Carousel({
             autoPlay: 1,
@@ -400,7 +402,7 @@ $(window).on('load', function() {
             yRadius: 50,
             bringToFront: true
         });
-    };
+    }
 });
 
 
@@ -413,9 +415,9 @@ $(window).on('load', function() {
 
 $(window).on('load', function() {
     if ($(window).width() <= 1075) {
-        $('#carousel').removeClass('game-slider').addClass('2d-game-slider');
+        $('#carousel').removeClass('game-slider').addClass('game-slider-2d');
         $('.game-slider__item').removeClass('game-slider__item cloud9-item')
-            .addClass('2d-game-slider__item');
+            .addClass('game-slider__item-2d');
         $('#carousel').slick({
             accessibility: true,
             slidesToShow: 3,
@@ -433,7 +435,7 @@ $(window).on('load', function() {
                     dots: true,
                 }
             }, {
-                breakpoint: 480,
+                breakpoint: 640,
                 settings: {
                     slidesToShow: 1,
                     dots: true,
@@ -442,21 +444,22 @@ $(window).on('load', function() {
                 }
             }]
         });
-    };
+    }
 });
 
 
 /*=====  End of 2D slider  ======*/
 
 $(window).on('resize scroll', (function() {
-    if ($(document).scrollTop() + $(window).height() > $('#carousel').offset().top && $(document).scrollTop() - $('#carousel').offset().top < $('#carousel').height()) {
+    let carousel = document.querySelector('#carousel');
+    if (wj42.isVisible(carousel)) {
         if (slider.state === '2d' && $(window).width() > 1075) {
             slider.state = '3d';
-            window.setTimeout('location.reload()', 50);
+            window.setTimeout(location.reload(), 50);
         }
         if (slider.state === '3d' && $(window).width() <= 1075) {
             slider.state = '2d';
-            window.setTimeout('location.reload()', 50);
+            window.setTimeout(location.reload(), 50);
         }
     }
 

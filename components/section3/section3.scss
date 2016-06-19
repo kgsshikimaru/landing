@@ -67,7 +67,7 @@
 }
 /*=====  End of Icons  ======*/
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:639px) {
     .s3-wrap-out picture img {
         display: none;
     }
@@ -159,7 +159,7 @@
 =================================*/
 
 
-.2d-game-slider__item {
+.game-slider__item-2d {
     width: 100%;
     height: 100%;
 
@@ -172,7 +172,7 @@
 }
 
 
-.2d-game-slider {
+.game-slider-2d {
     width: 80%;
     height: auto;
     margin: auto;
