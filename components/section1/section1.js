@@ -1,3 +1,4 @@
+export let section1 = () => {
 /*=====================================================
 =            fixed dropable and select img            =
 =====================================================*/
@@ -13,6 +14,6 @@ $(".maintain").disableSelection();
 
 
 /*=====  End of fixed dropable and select img  ======*/
-
+}
 
 

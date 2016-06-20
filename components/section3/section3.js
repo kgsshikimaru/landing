@@ -1,5 +1,6 @@
 import {wj42} from 'static/js/libraries/will-just-42';
 
+export var section3 = () => {
 
 var slider = {};
 if ($(window).width() <= 1075) {
@@ -474,3 +475,5 @@ $(window).on('resize scroll', (function() {
     }
 
 }));
+
+}

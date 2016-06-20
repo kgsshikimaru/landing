@@ -1,3 +1,4 @@
+export let section5 = () => {
 /*==============================
   =            slider            =
   ==============================*/
@@ -42,3 +43,4 @@ $('.slider-of-responses').on('afterChange', finderDescription );
 $(window).on('load', finderDescription );
 
 /*=====  End of slider  ======*/
+}
