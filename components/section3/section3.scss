@@ -81,6 +81,8 @@
 /*================================
 =            slider's            =
 ================================*/
+
+
 @media screen and (max-width:1090px) {
     div.container__game-slider {
         top: 9%;
@@ -130,7 +132,7 @@
 .game-slider {
     overflow: visible !important;
     position: relative;
-    top:-3rem;
+    top: -3rem;
 
     width: 22%;
     height: 22%;

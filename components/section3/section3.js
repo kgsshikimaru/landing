@@ -1,5 +1,6 @@
 import {wj42} from 'static/js/libraries/will-just-42';
 
+
 var slider = {};
 if ($(window).width() <= 1075) {
     slider.state = '2d';
@@ -7,6 +8,8 @@ if ($(window).width() <= 1075) {
 if ($(window).width() > 1075) {
     slider.state = '3d';
 }
+
+
 /*=================================
 =            3D slider            =
 =================================*/
@@ -385,25 +388,27 @@ if ($(window).width() > 1075) {
 
 
 
+let slider3d = () => {
 
-$(window).on('load', function() {
+    $('#carousel').attr( 'data-carousel2d' , 'false' );
+    $('.game-slider__item-2d').removeClass('game-slider__item-2d')
+        .addClass('game-slider__item cloud9-item');
+    $("#carousel").removeClass('game-slider-2d ')
+        .addClass('game-slider');
+    $("#carousel").Cloud9Carousel({
+        autoPlay: 1,
+        autoPlayDelay: 3000,
+        xOrigin: null, // null: calculated automatically
+        yOrigin: null,
+        farScale: 0.4,
+        xRadius: 550,
+        yRadius: 50,
+        bringToFront: true
+    });
+};
     if ($(window).width() > 1075) {
-        $('.game-slider__item-2d').removeClass('game-slider__item-2d')
-            .addClass('game-slider__item');
-        $("#carousel").removeClass('game-slider-2d')
-            .addClass('game-slider');
-        $("#carousel").Cloud9Carousel({
-            autoPlay: 1,
-            autoPlayDelay: 3000,
-            xOrigin: null, // null: calculated automatically
-            yOrigin: null,
-            farScale: 0.4,
-            xRadius: 550,
-            yRadius: 50,
-            bringToFront: true
-        });
+        slider3d()
     }
-});
 
 
 
@@ -412,40 +417,43 @@ $(window).on('load', function() {
 /*=================================
 =            2D slider            =
 =================================*/
+let slider2d = () => {
+    $('#carousel').attr( 'data-carousel2d' , 'true' );
+    $('#carousel').removeClass('game-slider').addClass('game-slider-2d');
+    $('.game-slider__item').removeClass('game-slider__item cloud9-item')
+        .addClass('game-slider__item-2d');
 
-$(window).on('load', function() {
+    $('[data-carousel2d=true').slick({
+        accessibility: true,
+        adaptiveHeight: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: true,
+        arrows: false,
+        dots: true,
+
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+                dots: true,
+            }
+        }, {
+            breakpoint: 640,
+            settings: {
+                slidesToShow: 1,
+                dots: true,
+                fade: true,
+                cssEase: 'linear'
+            }
+        }]
+    });
+}
     if ($(window).width() <= 1075) {
-        $('#carousel').removeClass('game-slider').addClass('game-slider-2d');
-        $('.game-slider__item').removeClass('game-slider__item cloud9-item')
-            .addClass('game-slider__item-2d');
-        $('#carousel').slick({
-            accessibility: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            infinite: true,
-            arrows: false,
-            dots: true,
-
-            responsive: [{
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                    dots: true,
-                }
-            }, {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 1,
-                    dots: true,
-                    fade: true,
-                    cssEase: 'linear'
-                }
-            }]
-        });
+        slider2d()
     }
-});
 
 
 /*=====  End of 2D slider  ======*/
@@ -456,6 +464,8 @@ $(window).on('resize scroll', (function() {
         if (slider.state === '2d' && $(window).width() > 1075) {
             slider.state = '3d';
             window.setTimeout(location.reload(), 50);
+
+
         }
         if (slider.state === '3d' && $(window).width() <= 1075) {
             slider.state = '2d';

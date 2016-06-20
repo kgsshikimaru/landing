@@ -8,6 +8,7 @@ $(window).on('load', function() {
         slidesToShow: 3,
         initialSlide: 1,
         slidesToScroll: 1,
+        adaptiveHeight: true,
         autoplay: false,
         autoplaySpeed: 5000,
         infinite: true,

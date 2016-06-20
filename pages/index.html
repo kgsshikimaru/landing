@@ -6,29 +6,43 @@
 </head>
 
 <body class="page">
-    %=symbols=%
-    <div class="hideOverflow">
-        {{> header/header}}
-        {{> section1/section1}}
-        <!-- responsive img - adaptive retina. Imitate background -->
-        {{> section2/section2}}
-        <!-- tabs - list-img-description -->
-        {{> section3/section3}}
-        <!-- 2d & 3d slider's -->
-        {{> section4/section4}}
-        <!-- form's -->
-        {{> section5/section5}}
-        <!-- cart's , slider -->
-        <footer>
-            {{> section6/section6}}
-        </footer>
-    </div>
-    <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
-    <script>
+%=symbols=%
+<div class="hideOverflow">
+    {{> header/header}}
+    {{> section1/section1}}
+    <!-- responsive img - adaptive retina. Imitate background -->
+    {{> section2/section2}}
+    <!-- tabs - list-img-description -->
+    {{> section3/section3}}
+    <!-- 2d & 3d slider's -->
+    {{> section4/section4}}
+    <!-- form's -->
+    {{> section5/section5}}
+    <!-- cart's , slider -->
+    <footer>
+        {{> section6/section6}}
+    </footer>
+</div>
+<!--[if IE 8 ]><link href="%=static=%css/main_ie8%=hash=%%=min=%.css" rel="stylesheet" type="text/css"><![endif]-->
+<!--[if IE 9 ]><link href="%=static=%css/main_ie9%=hash=%%=min=%.css" rel="stylesheet" type="text/css"><![endif]-->
+<link href="%=static=%css/main%=hash=%%=min=%.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+
+<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+
+
+<script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+<script>
     svg4everybody();
-    </script>
-    <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
-    <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+</script>
+<!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+
+<script src="%=static=%js/main%=hash=%%=min=%.js"></script>
 </body>
 
 </html>
