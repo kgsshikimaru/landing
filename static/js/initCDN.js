@@ -13,6 +13,45 @@ import {section5} from 'components/section5/section5';
 import svg4everybody from 'static/js/separate-js/svg4everybody.min';
 
 
+
+function getXHR() {
+    var xmlHttp;
+    try {
+        xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+        try {
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")
+        } catch (E) {
+            xmlHttp = false;
+        }
+    }
+
+    if (!xmlHttp && typeof XMLHttpRequest != 'undefined') {
+        xmlHttp = new XMLHttpRequest();
+    }
+
+    return xmlHttp;
+}
+
+function process(url, callback) {  // адрес - куда стучимся
+    var xmlHttp = getXHR();
+
+
+    xmlHttp.open('GET', url, true);
+    xmlHttp.onreadystatechange = function() {
+        if(xmlHttp.readyState == 4) {
+            if( !(xmlHttp.status === 200 || xmlHttp.status === 304) ) {
+                callback()
+            }
+        }
+    };
+    xmlHttp.send(null);
+}
+
+
+
+
+
 function loadCss(...file){
     for (let i = 0; i < file.length; i++) {
         let link = document.createElement("link");
@@ -22,38 +61,18 @@ function loadCss(...file){
         document.getElementsByTagName("body")[0].appendChild(link)
     }
 }
-/*
-
-function loadJsOld(scripts, callback) {
-    function addScript(src) {
-        var script = document.createElement('script');
-        script.src = src;
-        document.getElementsByTagName('body')[0].appendChild(script);
-        return script;
-    }
-    var counter = 0;
-
-    function onload(i) {
-        counter++;
-        if (counter == scripts.length) callback();
-    }
-
-    for (let i = 0; i < scripts.length; i++) {
-        let script = addScript(scripts[i]);
-
-        script.onload = function() {
-            onload(i);
-        };
-    }
-}
-*/
 
 function loadJs(...scripts) {
     return new Promise( (resolve, reject) => {
         function addScript(src) {
             let script = document.createElement('script');
+            script.async = true;
             script.src = src;
             document.getElementsByTagName('body')[0].appendChild(script);
+
+
+            process(src, () => console.log('callback'));
+
             return script;
         }
         let counter = 0;
@@ -76,95 +95,27 @@ function loadJs(...scripts) {
 
 
 
-
-
-
-
-
-
-
 loadCss(
-    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
-    'https://fonts.googleapis.com/css?family=Roboto:400,500,700',
-    'https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister'
+    '/static/css/main.min.css',
+    '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
+    '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
+    '//fonts.googleapis.com/css?family=Roboto:400,500,700',
+    '//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister'
 );
-loadJs("https://code.jquery.com/jquery-3.0.0.min.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js")
+loadJs("//code.jquery.com/jquery-3.0.0.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js")
     .then( () => {
         tabsInit();
         header();
         section1();
-        loadJs("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js")
+        loadJs("//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js")
     })
     .then( () => {
         section3();
         section5();
         svg4everybody();
+        console.log('finish');
     })
-    .catch( reason =>  console.error(reason));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-loadCss(
-    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
-    'https://fonts.googleapis.com/css?family=Roboto:400,500,700',
-    'https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister'
-);
-loadJs(
-    [
-        "https://code.jquery.com/jquery-3.0.0.min.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"
-    ],
-    () => {
-            tabsInit();
-            header();
-            section1();
-            loadJs(
-                [
-                    "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"
-                ], () => {
-                    section3();
-                    section5();
-                });
-            svg4everybody()
-    });*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .catch( reason =>  {
+        console.error('error' + reason)
+    });

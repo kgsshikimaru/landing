@@ -209,6 +209,7 @@
             @include bg-svg($icon16);
             &:hover {
                 @include bg-svg($icon18);
+                cursor: pointer;
             }
         }
         .icon17 {
@@ -219,6 +220,7 @@
             @include bg-svg($icon17);
             &:hover {
                 @include bg-svg($icon19);
+                cursor: pointer;
             }
         }
     }
