@@ -1,6 +1,4 @@
 
-
-
 import {tabsInit} from 'static/js/libraries/tabsInit';
 
 
@@ -15,7 +13,7 @@ import {section5} from 'components/section5/section5';
 import svg4everybody from 'static/js/separate-js/svg4everybody.min';
 
 
-function CSSLoad(...file){
+function loadCss(...file){
     for (let i = 0; i < file.length; i++) {
         let link = document.createElement("link");
         link.setAttribute("rel", "stylesheet");
@@ -24,86 +22,148 @@ function CSSLoad(...file){
         document.getElementsByTagName("body")[0].appendChild(link)
     }
 }
-CSSLoad(
-    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
-    'https://fonts.googleapis.com/css?family=Roboto:400,500,700',
-    'https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister'
-); //пример использования
-
-
 /*
 
-
-$.when(
-    $.getScript( "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js" ),
-    $.getScript( "https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js" ),
-    $.Deferred(function( deferred ){
-        $( deferred.resolve );
-    })
-).done(function(){
-    setTimeout(section3,200);
-    //place your code here, the scripts are all loaded
-
-});
-
-*/
-
-
-
-function addScript(src) {
-    var script = document.createElement('script');
-    script.src = src;
-    document.getElementsByTagName('body')[0].appendChild(script);
-    return script;
-}
-
-function addScripts(scripts, callback) {
-    var loaded = {}; // Для загруженных файлов loaded[i] = true
+function loadJsOld(scripts, callback) {
+    function addScript(src) {
+        var script = document.createElement('script');
+        script.src = src;
+        document.getElementsByTagName('body')[0].appendChild(script);
+        return script;
+    }
     var counter = 0;
 
     function onload(i) {
-        if (loaded[i]) return; // лишний вызов onload/onreadystatechange
-        loaded[i] = true;
         counter++;
         if (counter == scripts.length) callback();
     }
 
-    for (var i = 0; i < scripts.length; i++)(function(i) {
-        var script = addScript(scripts[i]);
+    for (let i = 0; i < scripts.length; i++) {
+        let script = addScript(scripts[i]);
 
         script.onload = function() {
             onload(i);
         };
+    }
+}
+*/
 
-        script.onreadystatechange = function() { // IE8-
-            if (this.readyState == 'loaded' || this.readyState == 'complete') {
-                setTimeout(this.onload, 0); // возможны повторные вызовы onload
+function loadJs(...scripts) {
+    return new Promise( (resolve, reject) => {
+        function addScript(src) {
+            let script = document.createElement('script');
+            script.src = src;
+            document.getElementsByTagName('body')[0].appendChild(script);
+            return script;
+        }
+        let counter = 0;
+
+        function onload(i) {
+            counter++;
+            if (counter == scripts.length) resolve();
+        }
+
+        for (let i = 0; i < scripts.length; i++) {
+            let script = addScript(scripts[i]);
+
+            script.onload = function() {
+                onload(i);
             }
-        };
-
-    }(i));
-
+        }
+    })
 }
 
-addScripts(
-    [
-        "https://code.jquery.com/jquery-3.0.0.min.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js",
-    ],
-    () => {
+
+
+
+
+
+
+
+
+
+
+loadCss(
+    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
+    'https://fonts.googleapis.com/css?family=Roboto:400,500,700',
+    'https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister'
+);
+loadJs("https://code.jquery.com/jquery-3.0.0.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js")
+    .then( () => {
         tabsInit();
         header();
         section1();
-        addScripts(
-            [
-                "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"
-            ], () => {
-                section3();
-                section5();
-            });
-        svg4everybody()
-});
+        loadJs("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js")
+    })
+    .then( () => {
+        section3();
+        section5();
+        svg4everybody();
+    })
+    .catch( reason =>  console.error(reason));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+loadCss(
+    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
+    'https://fonts.googleapis.com/css?family=Roboto:400,500,700',
+    'https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister'
+);
+loadJs(
+    [
+        "https://code.jquery.com/jquery-3.0.0.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"
+    ],
+    () => {
+            tabsInit();
+            header();
+            section1();
+            loadJs(
+                [
+                    "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"
+                ], () => {
+                    section3();
+                    section5();
+                });
+            svg4everybody()
+    });*/
+
+
+
+
+
+
+
+
+
+
 
 
 
