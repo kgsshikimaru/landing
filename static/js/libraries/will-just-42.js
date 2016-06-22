@@ -1,4 +1,5 @@
-let wj42 = {
+export function wj42() {
+return {
     /*=============================================
      =            Section comment block            =
      =============================================
@@ -59,6 +60,5 @@ let wj42 = {
     }
 
 };
-
-
-module.exports = wj42;
+}
+//module.exports = wj42;

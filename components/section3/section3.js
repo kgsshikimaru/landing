@@ -1,6 +1,20 @@
-import wj42 from 'static/js/libraries/will-just-42';
-
 export var section3 = () => {
+
+    function isVisible(elem) {
+
+        var coords = elem.getBoundingClientRect();
+
+        var windowHeight = document.documentElement.clientHeight;
+
+        var extendedTop = -0.5 * windowHeight;
+        var extendedBottom = 1.5 * windowHeight;
+
+        // top visible || bottom visible
+        var topVisible = coords.top > extendedTop && coords.top < extendedBottom;
+        var bottomVisible = coords.bottom < extendedBottom && coords.bottom > extendedTop;
+
+        return topVisible || bottomVisible;
+    }
 
 var slider = {};
 if ($(window).width() <= 1075) {
@@ -461,7 +475,7 @@ let slider2d = () => {
 
 $(window).on('resize scroll', (function() {
     let carousel = document.querySelector('#carousel');
-    if (wj42.isVisible(carousel)) {
+    if (isVisible(carousel)) {
         if (slider.state === '2d' && $(window).width() > 1075) {
             slider.state = '3d';
             window.setTimeout(location.reload(), 50);
@@ -476,4 +490,4 @@ $(window).on('resize scroll', (function() {
 
 }));
 
-}
+};

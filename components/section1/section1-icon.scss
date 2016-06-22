@@ -1,0 +1,15 @@
+.icon01 {
+    @include bg-svg($icon01);
+}
+
+.icon02 {
+    @include bg-svg($icon02);
+}
+
+.icon03 {
+    @include bg-svg($icon03);
+}
+
+.icon04 {
+    @include bg-svg($icon04);
+}

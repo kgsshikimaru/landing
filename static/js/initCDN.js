@@ -1,6 +1,5 @@
 import {jsCssLoader} from 'static/js/jsCssLoader';
-import wj42 from 'static/js/libraries/will-just-42';
-import {tabsInit} from 'static/js/libraries/tabsInit';
+import {tabsInit} from 'static/js/tabsInit';
 
 
 import {header} from 'components/header/header';
@@ -18,30 +17,25 @@ import svg4everybody from 'static/js/separate-js/svg4everybody.min';
 jsCssLoader(
     ['css', ['/static/css/main.min.css', '/static/css/main.css']],
     ['css', ['//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
-             '/static/reservation/slick.min.css']],
+             '/reservation/slick.min.css']],
     ['css', ['//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
-             '/static/reservation/slick-theme.min.css']],
+             '/reservation/slick-theme.min.css']],
     ['css', ['//fonts.googleapis.com/css?family=Roboto:400,500,700',
-             '/static/reservation/roboto.css']],
+             '/reservation/roboto.css']],
     ['css', ['//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister',
-             '/static/reservation/love.css']],
+             '/reservation/love.css']],
     ['js', ['//code.jquery.com/jquery-3.0.0.min.js',
-            '/static/reservation/jquery-3.0.0.min.js']],
+            '/reservation/jquery-3.0.0.min.js']],
     ['js', ['//cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js',
-            '/static/reservation/picturefill.min.js']]
+            '/reservation/picturefill.min.js']]
     )
     .then( () => {
-        wj42.tabsGenerator (
-            ['.menu__container__navigation a'],  // header menu - only highlight classActive (header)
-            ['.s2-li-wrapper a', '.monitor-display-img', '.img-'],  // img in monitor (section 2)
-            ['.s2-li-wrapper a', '.tabs-container', '.text-'],  // text right than monitor (section 2)
-            ['.login-wrapper__tabs-form__li-wrapper a', '.login-tabs-container', '.login-']  // form tabs (section 4)
-        );
+        tabsInit();
         header();
         section1();
         jsCssLoader(
             ['js', ['//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',
-                '/static/reservation/slick.min.js']]
+                '/reservation/slick.min.js']]
         )
         .then(() => {
             section3();

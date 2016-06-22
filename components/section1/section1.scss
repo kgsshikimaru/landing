@@ -32,8 +32,6 @@
         transition: .2s;
         border: .063rem solid white;
         border-radius: .188rem;
-        justify-content: center;
-        align-items: center;
         &:hover,
         &:focus {
             text-decoration: none;
@@ -83,7 +81,7 @@
             margin: auto;
             left: 0;
             border: .063rem solid #9a9;
-            box-shadow: inset 0px 0px 109px 6px rgba(0, 0, 0, 0.15);
+            box-shadow: inset 0 0 109px 6px rgba(0, 0, 0, 0.15);
         }
     }
 }
@@ -104,21 +102,7 @@
     }
 }
 
-.icon01 {
-    @include bg-svg($icon01);
-}
 
-.icon02 {
-    @include bg-svg($icon02);
-}
-
-.icon03 {
-    @include bg-svg($icon03);
-}
-
-.icon04 {
-    @include bg-svg($icon04);
-}
 
 .s1-wrap__icon {
     background-color: #42af43;
