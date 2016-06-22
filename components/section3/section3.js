@@ -433,12 +433,11 @@ let slider3d = () => {
 =            2D slider            =
 =================================*/
 let slider2d = () => {
-    $('#carousel').attr( 'data-carousel2d' , 'true' );
     $('#carousel').removeClass('game-slider').addClass('game-slider-2d');
     $('.game-slider__item').removeClass('game-slider__item cloud9-item')
         .addClass('game-slider__item-2d');
 
-    $('[data-carousel2d=true').slick({
+    $('#carousel').slick({
         accessibility: true,
         adaptiveHeight: true,
         slidesToShow: 3,
@@ -453,7 +452,7 @@ let slider2d = () => {
             breakpoint: 768,
             settings: {
                 slidesToShow: 2,
-                dots: true,
+                dots: true
             }
         }, {
             breakpoint: 640,
@@ -465,7 +464,7 @@ let slider2d = () => {
             }
         }]
     });
-}
+};
     if ($(window).width() <= 1075) {
         slider2d()
     }
@@ -477,14 +476,28 @@ $(window).on('resize scroll', (function() {
     let carousel = document.querySelector('#carousel');
     if (isVisible(carousel)) {
         if (slider.state === '2d' && $(window).width() > 1075) {
-            slider.state = '3d';
-            window.setTimeout(location.reload(), 50);
 
-
+            function transformTo3D() {
+                return new Promise( (resolve) => {
+                    $('#carousel').slick('unslick');
+                    slider3d();
+                    resolve('3d');
+                })
+            }
+            transformTo3D()
+                .then( (form) => slider.state = form )
         }
         if (slider.state === '3d' && $(window).width() <= 1075) {
-            slider.state = '2d';
-            window.setTimeout(location.reload(), 50);
+            function transformTo2D() {
+                return new Promise( (resolve) => {
+                    $("#carousel").data("carousel").deactivate();
+                    $("#carousel *").attr('style', '');
+                    slider2d();
+                    resolve('2d');
+                })
+            }
+            transformTo2D()
+                .then( (form) => slider.state = form )
         }
     }
 
