@@ -1,5 +1,4 @@
 import {jsCssLoader} from 'static/js/jsCssLoader';
-import {imgLazyLoader} from 'static/js/imgLazyLoader';
 import {tabsInit} from 'static/js/tabsInit';
 
 
