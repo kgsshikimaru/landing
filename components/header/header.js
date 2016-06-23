@@ -22,6 +22,59 @@ $(window).on('resize', function() {
 /*=====  fix collapsed menu after <767px => open menu => close close
 =>     resize to large window
 ==========================================================================*/
+
+
+    // navigation menu
+$('.menu__container__navigation').on('click', 'a', scrollTo);
+    function scrollTo() {
+        let $this = $(this);
+        let $TargetToScroll;
+        let $screen = $('html, body');
+        console.log(this);
+        if ($this.attr('href') === '#monitor-tabs') {
+            $TargetToScroll = $('.s2-out-wrapper').offset().top;
+            $screen.animate({scrollTop: $TargetToScroll}, 900);
+        }
+        if ($this.attr('href') === '#3d/2d-responsive-slider') {
+            $TargetToScroll = $('.s3-wrap-out').offset().top;
+            $screen.animate({scrollTop: $TargetToScroll}, 2000);
+        }
+        if ($this.attr('href') === '#my-ability') {
+            $TargetToScroll = $('.s3-wrap-out h1').offset().top;
+            $screen.animate({scrollTop: $TargetToScroll}, 2200);
+            setTimeout(() => {
+                $('.login-wrapper__tabs-form__li-wrapper a[href="#tab-2"]').click()
+            }, 2200)
+        }
+        if ($this.attr('href') === '#my-number') {
+            $TargetToScroll = $('.s3-wrap-out h1').offset().top;
+            $screen.animate({scrollTop: $TargetToScroll}, 2200);
+            setTimeout(() => {
+                $('.login-wrapper__tabs-form__li-wrapper a[href="#tab-3"]').click()
+            }, 2200)
+        }
+
+        if ($this.attr('href') === '#ajax-button') {
+            $TargetToScroll = $('.s5-wrapper').offset().top;
+            $screen.animate({scrollTop: $TargetToScroll}, 2200);
+        }
+
+        return false;
+    }
+
+
+/*
+
+    $('a[href="#monitor-tabs"] ').click(function(){
+        var speed = 1000;
+        var top = $('.s2-out-wrapper')
+        $('html, body').animate({scrollTop: top}, speed);
+        return false;
+    });
+
+*/
+
+
 };
 
 
