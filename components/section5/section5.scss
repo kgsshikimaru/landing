@@ -74,27 +74,32 @@
 
             color: white;
             border-radius: .563rem;
+
+            a {
+                display: block;
+            }
         }
-        .btn1 {
+        .s5-btn1 {
             background-color: #ee4e3e;
             &:hover {
                 background: darken(#ee4e3e, 20%);
             }
         }
-        .btn2 {
+        .s5-btn2 {
             background-color: #91d850;
             &:hover {
                 background: darken(#91d850, 20%);
             }
         }
-        .btn3 {
+        .s5-btn3 {
             background-color: #865ee8;
             &:hover {
                 background: darken(#865ee8, 20%);
             }
+
+        }
         }
     }
-}
 
 /*=====  End of cart's  ======*/
 

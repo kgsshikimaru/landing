@@ -6,8 +6,8 @@ export var section3 = () => {
 
         var windowHeight = document.documentElement.clientHeight;
 
-        var extendedTop = -0.5 * windowHeight;
-        var extendedBottom = 1.5 * windowHeight;
+        var extendedTop = -windowHeight;
+        var extendedBottom = windowHeight;
 
         // top visible || bottom visible
         var topVisible = coords.top > extendedTop && coords.top < extendedBottom;

@@ -1,4 +1,5 @@
 import {jsCssLoader} from 'static/js/jsCssLoader';
+import {imgLazyLoader} from 'static/js/imgLazyLoader';
 import {tabsInit} from 'static/js/tabsInit';
 
 
@@ -35,7 +36,11 @@ jsCssLoader(
         section1();
         jsCssLoader(
             ['js', ['//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',
-                '/reservation/slick.min.js']]
+                '/reservation/slick.min.js']],
+            ['js', ['//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js',
+            '/reservation/jquery.magnific-popup.min.js']],
+            ['css', ['//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css',
+                '/reservation/magnific-popup.min.css']]
         )
         .then(() => {
             section3();
