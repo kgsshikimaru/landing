@@ -433,6 +433,7 @@ let slider3d = () => {
 =            2D slider            =
 =================================*/
 let slider2d = () => {
+    $('.container__game-slider').attr('style', '');
     $('#carousel').removeClass('game-slider').addClass('game-slider-2d');
     $('.game-slider__item').removeClass('game-slider__item cloud9-item')
         .addClass('game-slider__item-2d');
@@ -473,31 +474,61 @@ let slider2d = () => {
 /*=====  End of 2D slider  ======*/
 
 $(window).on('resize scroll', (function() {
+    let block = false;
     let carousel = document.querySelector('#carousel');
+    let $carousel = $("#carousel");
     if (isVisible(carousel)) {
-        if (slider.state === '2d' && $(window).width() > 1075) {
-
+        if (slider.state === '2d' && $(window).width() > 1075 && !block) {
+            block = true;
             function transformTo3D() {
                 return new Promise( (resolve) => {
-                    $('#carousel').slick('unslick');
+                    $carousel.slick('unslick');
                     slider3d();
                     resolve('3d');
                 })
             }
             transformTo3D()
-                .then( (form) => slider.state = form )
+                .then( (form) => {
+                    block = false;
+                    slider.state = form;
+                })
         }
-        if (slider.state === '3d' && $(window).width() <= 1075) {
+        if (slider.state === '3d' && $(window).width() <= 1075 && !block) {
+            block = true;
             function transformTo2D() {
                 return new Promise( (resolve) => {
-                    $("#carousel").data("carousel").deactivate();
-                    $("#carousel *").attr('style', '');
+                    $carousel.data("carousel").deactivate();
+                    $carousel.find('img').attr('style', '');
                     slider2d();
                     resolve('2d');
                 })
             }
             transformTo2D()
-                .then( (form) => slider.state = form )
+                .then( (form) => {
+                    block = false;
+                    slider.state = form;
+                })
+        }
+        if (slider.state === '3d' && $(window).width() > 1075) {
+            let $imgs = $carousel.find('img');
+            let maxPosition  = 0;
+            let maxHeight = 0;
+            let toBottom = 0;
+            for (let img of $imgs ) {
+                let position = $(img).offset().top;
+                if ( position > maxPosition) {
+                    maxPosition = position;
+                }
+                if ($(img).height() > maxHeight) {
+                    maxHeight = $(img).height();
+                }
+                toBottom = maxPosition + maxHeight;
+            }
+            let $containerSlider = $('.container__game-slider');
+            let $containerSliderH = $containerSlider.height();
+            if ($('.login-wrapper__tabs-form').offset().top < toBottom + 10) {
+                $containerSlider.height($containerSliderH + 10);
+            }
         }
     }
 

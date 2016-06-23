@@ -64,12 +64,13 @@
 
 @media screen and (max-width:1090px) {
     div.container__game-slider {
+        position: relative;
         top: 9%;
         h1 {
-        position: relative;
-        top: 1.8rem;
-        line-height: 3rem;
-    }
+            position: relative;
+            top: 1.8rem;
+            line-height: 3rem;
+        }
     }
 
 }
@@ -111,12 +112,13 @@
 .game-slider {
     overflow: visible !important;
     position: relative;
-    top: -3rem;
+    top: -3vw;
 
     width: 22%;
     height: 22%;
     margin: auto;
     padding: 0;
+
 }
 .game-slider__item {
     width: 100%;
@@ -158,6 +160,10 @@
     height: auto;
     margin: auto;
     padding: 1rem;
+
+    ul {
+        bottom: 0;
+    }
 }
 /*=====  End of 2D slider  ======*/
 
