@@ -96,6 +96,59 @@
     margin: 1% -3% 1% -1%;
 }
 
+.telephone-container {
+
+    height: 1.8rem;
+    width: 18.6rem;
+    display: flex;
+    justify-content: center;
+
+    font-family: $Avenir;
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+
+    &__number-closer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #eee;
+
+        padding: 0;
+        margin: 0;
+        border-radius: 3px;
+        width: 100%;
+        span {
+            margin: 0 2.5rem 0 0;
+        }
+    }
+    &__number-open {
+        background-color: #f5f5f5;
+    }
+    &__show-button {
+        a {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            border-radius: 3px;
+            padding: 0 10px;
+        }
+
+        &_notactive {
+            background-color: #ee0;
+            &:hover {
+                background-color: $green;
+
+            }
+        }
+        &_active {
+            background-color: #2d6a29;
+            cursor: default;
+        }
+    }
+}
 .menu__container {
     position: relative;
     display: flex;
@@ -107,40 +160,7 @@
         cursor: pointer;
         display: none;
     }
-    &__search {
-        font-family: $Avenir;
-        font-size: 0.85rem;
-        font-weight: 300;
-        line-height: 1.5rem;
-        &__button-wrapper {
-            position: relative;
-            &__text {
-                padding: 0 2.5rem 0 0.3rem;
-                margin: 0 0rem 0 1.2rem;
-                border: 1px solid $grey;
-                border-radius: 3px;
-                height: 1.8rem;
-                width: 13.6rem;
-            }
-            &__button {
-                position: absolute;
-                top: -1px;
-                right: -1px;
-                height: 2rem;
-                width: 2.2rem;
-                color: #fff;
-                padding: 0;
-                border: 0;
-                border-radius: 3px;
-                color: #000;
-                background-color: $light-blue;
-                transition: .4s;
-                &:hover {
-                    background-color: $blue;
-                }
-            }
-        }
-    }
+
     &__navigation {
         text-transform: uppercase;
         width: 148%;
@@ -205,26 +225,17 @@
     }
 
     .menu__container {
-        &__search {
-            width: 90%;
-            &__button-wrapper {
-                display: flex;
-                justify-content: center;
-                &__text {
-                    padding: 0 2rem 0 0.2rem;
-                    margin: 0;
-                    border: 1px solid $grey;
-                    border-radius: 3px;
-                    height: 1.8rem;
-                    width: 80%;
-                }
-                &__button {
-                    position: absolute;
-                    top: -1px;
-                    right: 1%;
-                    height: 2rem;
-                    width: 2.2rem;
-                }
+        .telephone-container {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            &__number-closer {
+                margin: 0;
+                border-radius: 3px;
+                height: 1.8rem;
+            }
+            &__button {
+
             }
         }
 

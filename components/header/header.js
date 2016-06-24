@@ -60,6 +60,18 @@ $('.menu__container__navigation').on('click', 'a', scrollTo);
     }
 
 
+// show telephone
+let block = false;
+    $('.telephone-container__show-button a').on('click', (e) => {
+        if (!block) {
+            block = true;
+            $(e.currentTarget).toggleClass('telephone-container__show-button_notactive telephone-container__show-button_active');
+            let $container = $('.telephone-container__number-closer');
+            $container.find('span').remove();
+            $container.addClass('telephone-container__number-open').append('<span>8-903-xxx-xx-xx</span>');
+
+        }
+    })
 
 };
 

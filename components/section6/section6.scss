@@ -14,6 +14,7 @@
     flex-direction: column;
 
     margin: auto;
+    padding-bottom: 2rem;
 }
 
 .s6-contain_info {
@@ -76,6 +77,11 @@
             color: #a0dc62;
         }
         button {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             font-family: Roboto;
             font-size: .875rem;
             font-weight: 700;
@@ -94,6 +100,11 @@
             &:hover {
                 background: darken(#0894cd, 20%);
             }
+
+        }
+        .deactive {
+            background: darken(#0894cd, 20%);
+            cursor: default;
         }
     }
     &__elem2 {
@@ -264,4 +275,11 @@
         position: relative;
         bottom: 0;
     }
+}
+
+.s6-iframe-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
 }

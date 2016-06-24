@@ -1,16 +1,5 @@
 export let section5 = () => {
-
-    /*==============================
-     =            lightbox -> cart            =
-     ==============================*/
-
-    $('.cart-description-wrapper__elem a').magnificPopup({
-        type:'ajax'
-    });
-
-    /*=====  End of lightbox -> cart  ======*/
-
-
+    
 /*==============================
   =            slider            =
   ==============================*/

@@ -8,19 +8,16 @@ import {section1} from 'components/section1/section1';
 import {section3} from 'components/section3/section3';
 // empty -  import section4 from 'components/section4/section4';
 import {section5} from 'components/section5/section5';
-// empty -  import section6 from 'components/section6/section6';
+import {section6} from 'components/section6/section6';
 
 import svg4everybody from 'static/js/separate-js/svg4everybody.min';
 
 
 
+import {arrowUpToHeader} from 'static/js/arrowUpToHeader';
+import {magnificPopup} from 'static/js/magnificPopup';
 
-
-
-
-import {arrowUpToHeader} from 'static/js/arrowUpToHeader'
-
-import {test} from 'static/js/test'
+import {test} from 'static/js/test';
 
 
 jsCssLoader(
@@ -44,9 +41,11 @@ jsCssLoader(
         .then(() => {
             section3();
             section5();
+            section6();
             svg4everybody();
             test();
             arrowUpToHeader();
+            magnificPopup();
         });
     })
     .catch( (data) => {
