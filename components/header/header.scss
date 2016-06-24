@@ -132,6 +132,7 @@
                 padding: 0;
                 border: 0;
                 border-radius: 3px;
+                color: #000;
                 background-color: $light-blue;
                 transition: .4s;
                 &:hover {
@@ -243,3 +244,10 @@
 
 
 /*=====  End of logo, search, nav__menu  ======*/
+.arrowUpToHeader {
+    position: fixed;
+    color: #a5a208;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+}

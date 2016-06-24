@@ -474,9 +474,7 @@ let slider2d = () => {
 /*=====  End of 2D slider  ======*/
 
 $(window).on('resize scroll', (function() {
-    let block = false;
-    let carousel = document.querySelector('#carousel');
-    let $carousel = $("#carousel");
+    let [block, carousel, $carousel] = [false, document.querySelector('#carousel'), $("#carousel")];
     if (isVisible(carousel)) {
         if (slider.state === '2d' && $(window).width() > 1075 && !block) {
             block = true;
@@ -510,10 +508,7 @@ $(window).on('resize scroll', (function() {
                 })
         }
         if (slider.state === '3d' && $(window).width() > 1075) {
-            let $imgs = $carousel.find('img');
-            let maxPosition  = 0;
-            let maxHeight = 0;
-            let toBottom = 0;
+            let [$imgs, maxPosition, maxHeight, toBottom] = [$carousel.find('img'), 0, 0, 0];
             for (let img of $imgs ) {
                 let position = $(img).offset().top;
                 if ( position > maxPosition) {

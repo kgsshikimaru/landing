@@ -134,16 +134,20 @@ $CustomFont: 'CustomFont', Helvetica, Arial, sans-serif;
     font-style: normal;
 }
 
-.flaticon-bars:before { content: "\f100"; font-size: 3rem;}
-.flaticon-call-answer:before { content: "\f101"; }
-.flaticon-envelope:before { content: "\f102"; }
-.flaticon-facebook-logo:before { content: "\f103"; }
-.flaticon-instagram-logo:before { content: "\f104"; }
-.flaticon-magnifying-glass:before { content: "\f105"; }
-.flaticon-pinterest-logo:before { content: "\f106"; }
-.flaticon-social:before { content: "\f107"; }
-.flaticon-symbol:before { content: "\f108"; }
-.flaticon-telephone:before { content: "\f109"; }
+.flaticon-facebook-logo:before { content: "\f100"; }
+.flaticon-instagram-logo:before { content: "\f101"; }
+.flaticon-internet:before { content: "\f102"; }
+.flaticon-loading:before { content: "\f103"; }
+.flaticon-mail:before { content: "\f104"; }
+.flaticon-menu:before { content: "\f105";  font-size: 3rem;}
+.flaticon-phone-receiver:before { content: "\f106"; }
+.flaticon-pinterest-logo:before { content: "\f107"; }
+.flaticon-pointing-up-arrow:before { content: "\f108";
+    font-size: 30px;}
+.flaticon-skype-logo:before { content: "\f109"; }
+.flaticon-twitter-logo-silhouette:before { content: "\f10a"; }
+.flaticon-view-eye-interface-symbol:before { content: "\f10b"; }
+
 
 
 

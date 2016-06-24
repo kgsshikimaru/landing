@@ -55,4 +55,9 @@ $('.slider-of-responses').on('afterChange', finderDescription );
 $(window).on('load', finderDescription );
 
 /*=====  End of slider  ======*/
+
+$('.heo').append('<span class="Js-Fix-learn-append-elem-into-html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>');
+
+
+
 }

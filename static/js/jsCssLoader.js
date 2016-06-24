@@ -1,4 +1,4 @@
-// jsCssLoader([[type,url,alternativeUrl...],[type,url,alternativeUrl...]...]).then()
+// jsCssLoader([url,alternativeUrl, ...],[url,alternativeUrl, ...], ...).then()
 export function jsCssLoader(...arr)  {
      return new Promise( (resolve, reject) => {
          let counterOnLoad = 0;
@@ -59,10 +59,8 @@ export function jsCssLoader(...arr)  {
             }
             connectUrl (url)
         }
-
         for (let i = 0; i < arr.length; i++) {
-            arr[i][0] === 'js' ? addScript(arr[i][1]) : arr[i][0] === 'css' ? addStyle(arr[i][1])
-                : console.log('unknown parameter is : ' + arr[i][0] + '. Use only js/css');
+            arr[i][0].slice(-3) === '.js' ? addScript(arr[i]) : addStyle(arr[i]);
         }
     })
 }

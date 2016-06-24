@@ -27,15 +27,12 @@ $(window).on('resize', function() {
     // navigation menu
 $('.menu__container__navigation').on('click', 'a', scrollTo);
     function scrollTo() {
-        let $this = $(this);
-        let $TargetToScroll;
-        let $screen = $('html, body');
-        console.log(this);
+        let [$this, $TargetToScroll, $screen] = [$(this),null,$('html, body')];
         if ($this.attr('href') === '#monitor-tabs') {
             $TargetToScroll = $('.s2-out-wrapper').offset().top;
             $screen.animate({scrollTop: $TargetToScroll}, 900);
         }
-        if ($this.attr('href') === '#3d/2d-responsive-slider') {
+        if ($this.attr('href') === '#3d-2d-responsive-slider') {
             $TargetToScroll = $('.s3-wrap-out').offset().top;
             $screen.animate({scrollTop: $TargetToScroll}, 2000);
         }
@@ -62,17 +59,6 @@ $('.menu__container__navigation').on('click', 'a', scrollTo);
         return false;
     }
 
-
-/*
-
-    $('a[href="#monitor-tabs"] ').click(function(){
-        var speed = 1000;
-        var top = $('.s2-out-wrapper')
-        $('html, body').animate({scrollTop: top}, speed);
-        return false;
-    });
-
-*/
 
 
 };
