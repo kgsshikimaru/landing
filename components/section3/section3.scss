@@ -57,6 +57,7 @@
     }
 }
 
+
 /*================================
 =            slider's            =
 ================================*/
@@ -73,6 +74,14 @@
         }
     }
 
+}
+
+#carousel {
+    min-height:1px;
+
+}
+.game-slider-out-wrapper {
+    position: relative;
 }
 .container__game-slider {
     position: relative;
@@ -128,9 +137,6 @@
 
     border-radius: 1rem;
     box-shadow: 0 125px 167px -81px rgba(0,0,0,.6);
-}
-#carousel .cloud9-item button {
-    cursor: pointer;
 }
 /*=====  End of 3D slider  ======*/
 

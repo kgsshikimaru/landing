@@ -472,12 +472,63 @@ let slider2d = () => {
 
 
 /*=====  End of 2D slider  ======*/
+    let carouselTopPadding = 0;
+    function fixToH1position () {
+        let $carousel = $("#carousel");
+        let [$imgs, minPosition] = [$carousel.find('img'), 99999999999];
+        for (let img of $imgs ) {
+            let position = $(img).offset().top;
+            if (minPosition > position) {
+                minPosition = position;
+            }
+        }
+
+        let $h1 = $('.container__game-slider h1');
+
+        if ($h1.offset().top + $h1.height() + 40 > minPosition) {
+
+                carouselTopPadding += 13;
+                $carousel.css({'top': carouselTopPadding});
+                setTimeout( fixToH1position,5)
+        }
+        if ($h1.offset().top + $h1.height() + 70 < minPosition) {
+                carouselTopPadding -= 13;
+                $carousel.css({'top': carouselTopPadding});
+                setTimeout( fixToH1position,5)
+        }
+    }
+    function fixBottomPosition() {
+        let $carousel = $("#carousel");
+        let [$imgs, maxPosition, maxHeight, toBottom] = [$carousel.find('img'), 0, 0, 0];
+        for (let img of $imgs ) {
+            let position = $(img).offset().top;
+            if ( position > maxPosition) {
+                maxPosition = position;
+            }
+            if ($(img).height() > maxHeight) {
+                maxHeight = $(img).height();
+            }
+            toBottom = maxPosition + maxHeight;
+        }
+        let $containerSlider = $('.container__game-slider');
+        let $ofsetTopLogin = $('.login-wrapper__tabs-form').offset().top;
+
+        if ($ofsetTopLogin < (toBottom + 10)) {
+            $containerSlider.height($containerSlider.height() + 10);
+            setTimeout( fixBottomPosition,5)
+        }
+        if ($ofsetTopLogin > (toBottom + 21)) {
+            $containerSlider.height($containerSlider.height() - 10);
+            setTimeout( fixBottomPosition,5)
+        }
+    }
 
 $(window).on('resize scroll', (function() {
     let [block, carousel, $carousel] = [false, document.querySelector('#carousel'), $("#carousel")];
     if (isVisible(carousel)) {
         if (slider.state === '2d' && $(window).width() > 1075 && !block) {
             block = true;
+            $carousel.find('img').css('position', 'absolute');
             function transformTo3D() {
                 return new Promise( (resolve) => {
                     $carousel.slick('unslick');
@@ -489,18 +540,24 @@ $(window).on('resize scroll', (function() {
                 .then( (form) => {
                     block = false;
                     slider.state = form;
+                    fixToH1position ();
+                    fixBottomPosition();
+
                 })
         }
         if (slider.state === '3d' && $(window).width() <= 1075 && !block) {
+            $carousel.css({'top': 0});
             block = true;
             function transformTo2D() {
                 return new Promise( (resolve) => {
                     $carousel.data("carousel").deactivate();
                     $carousel.find('img').attr('style', '');
-                    slider2d();
-                    resolve('2d');
+                    setTimeout(() => {
+                        slider2d();
+                        resolve('2d');
+                    },15)
                 })
-            }
+            };
             transformTo2D()
                 .then( (form) => {
                     block = false;
@@ -508,22 +565,8 @@ $(window).on('resize scroll', (function() {
                 })
         }
         if (slider.state === '3d' && $(window).width() > 1075) {
-            let [$imgs, maxPosition, maxHeight, toBottom] = [$carousel.find('img'), 0, 0, 0];
-            for (let img of $imgs ) {
-                let position = $(img).offset().top;
-                if ( position > maxPosition) {
-                    maxPosition = position;
-                }
-                if ($(img).height() > maxHeight) {
-                    maxHeight = $(img).height();
-                }
-                toBottom = maxPosition + maxHeight;
-            }
-            let $containerSlider = $('.container__game-slider');
-            let $containerSliderH = $containerSlider.height();
-            if ($('.login-wrapper__tabs-form').offset().top < toBottom + 10) {
-                $containerSlider.height($containerSliderH + 10);
-            }
+            fixToH1position ();
+            fixBottomPosition();
         }
     }
 
