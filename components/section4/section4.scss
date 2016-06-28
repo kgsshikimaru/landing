@@ -99,6 +99,17 @@
         }
     }
 }
+
+.login-tab-2, .login-tab-3 {
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style: inside;
+        a {
+            text-decoration: underline !important;
+        }
+    }
+}
 @media screen and (max-width:865px) {
     .login-tabs_elem {
         input {

@@ -535,10 +535,15 @@ let slider2d = () => {
 
 
     }
+
     function fixBottomPosition2d(min,max) {
         let $carousel = $("#carousel");
         let [$imgs, maxPosition, maxHeight, toBottom] = [$carousel.find('img'), 0, 0, 0];
-        let $dotsPosition = $('.slick-dots').offset().top + $('.slick-dots').height();
+        let $dotsPosition;
+        try {
+            $dotsPosition = $('.slick-dots').offset().top + $('.slick-dots').height();
+        } catch (e) {}
+
 
         let $containerSlider = $('.container__game-slider');
         let $ofsetTopLogin = $('.login-wrapper__tabs-form').offset().top;
@@ -562,12 +567,14 @@ let slider2d = () => {
 
 $(window).on('resize scroll', (function() {
     let [block, carousel, $carousel] = [false, document.querySelector('#carousel'), $("#carousel")];
-
     if (isVisible(carousel)) {
         let startInterval = true;
         if (startInterval && singleton) {
             singleton = false;
             interval = setInterval(() => {
+
+
+
         if (slider.state === '2d' && $(window).width() > 1075 && !block) {
             block = true;
             $carousel.find('img').css('position', 'absolute');
@@ -613,7 +620,6 @@ $(window).on('resize scroll', (function() {
         if (slider.state === '2d' && $(window).width() <= 1075) {
             fixBottomPosition2d(3,15);
         }
-                console.log('4 8 15 16 23 42');
             },100);
         }
     }
@@ -622,6 +628,7 @@ $(window).on('resize scroll', (function() {
         singleton = true;
         clearInterval(interval);
     }
+
 
 }));
 

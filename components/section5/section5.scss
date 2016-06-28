@@ -61,11 +61,16 @@
 
             color: #858d8f;
         }
-        button {
+        .s5-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px outset #eee;
             font-family: Roboto;
             font-size: .875rem;
             font-weight: 700;
             line-height: 3.063rem;
+
 
             width: 14.75rem;
             height: 3.125rem;
@@ -75,9 +80,8 @@
             color: white;
             border-radius: .563rem;
 
-            a {
-                display: block;
-            }
+
+
         }
         .s5-btn1 {
             background-color: #ee4e3e;
@@ -114,10 +118,10 @@
 .slider-of-responses-wrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;//
 
     margin-top: 6rem;
 
-    align-items: center;
     > h1 {
         font-family: $KlinicSlab-Bold;
         font-size: 2.563rem;
@@ -127,8 +131,15 @@
 
         color: #4b4b4b;
     }
-    .slider-of-responses__description {
+
+    .slider-of-responses__description{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;//
+        justify-content: center;//
+        margin:auto;
         position: relative;
+
 
         width: 82%;
 
@@ -144,7 +155,7 @@
         .icon15 {
             position: absolute;
             top: 92%;
-            left: 50%;
+            left: 48%;
 
             @include bg-svg($icon15);
         }
@@ -162,23 +173,17 @@
         }
     }
     .slider-of-responses {
-        display: flex;
-
         width: 100%;
         height: auto;
         padding: 3rem 0 1rem 6rem;
-
-        justify-content: flex-start;
         &__item {
-            display: inline-flex;
+            display: flex;
             img {
-                display: inline;
-
-                max-width: 99px;
-                max-height: 99px;
+                width: 99px;
+                height: 99px;
                 border-radius:50%;
             }
-            div {
+            div:nth-child(2)  {
                 display: inline-flex;
                 flex-direction: column;
                 padding: 1.5rem 1rem;
@@ -232,7 +237,7 @@
 }
 
 .slick-initialized div.slick-slide {
-    display: inline-flex;
+    display: flex;
     padding-bottom: 4rem;
 }
 
@@ -255,7 +260,7 @@
     .slider-of-responses-wrapper .slider-of-responses__description div.icon15 {
         position: absolute;
         top: 95%;
-        left: 50%;
+        left: 52%;
     }
 
     div.slider-of-responses-wrapper div.slider-of-responses__item {
@@ -296,7 +301,7 @@
     .slider-of-responses-wrapper .slider-of-responses__description div.icon15 {
         position: absolute;
         top: 98%;
-        left: 48%;
+        left: 52%;
 
         @include bg-svg($icon15forSM);
     }
@@ -313,6 +318,3 @@
 
 }
 /*=====  End of sliders-of-responses  ======*/
-
-.heo::after {
-}

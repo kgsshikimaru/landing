@@ -111,13 +111,13 @@
         ul {
             padding: 0;
 
-            list-style-position: inside;
+            display: inline-block;
             list-style-type: circle;
             list-style-image: url('/static/img/assets/section6/icon22.svg');
-            @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            /*@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
                 list-style-position: outside;
-                /* style only for IE10 & IE11 */
-            }
+                !* style only for IE10 & IE11 *!
+            }*/
         }
         li {
             font-size: 1rem;
@@ -248,10 +248,16 @@
         flex-direction: column;
 
         align-items: center;
+
         > div {
             width: 100%;
 
             text-align: center;
+        }
+        .s6-contain_info__elem2 ul {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
         .s6-contain_info__elem3 {
             width: 100%;

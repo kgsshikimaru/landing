@@ -36,7 +36,7 @@ $('.menu__container__navigation').on('click', 'a', scrollTo);
             $TargetToScroll = $('.s3-wrap-out').offset().top;
             $screen.animate({scrollTop: $TargetToScroll}, 2000);
         }
-        if ($this.attr('href') === '#my-ability') {
+        if ($this.attr('href') === '#List-of-quality-my-service') {
             $TargetToScroll = $('.s3-wrap-out h1').offset().top;
             $screen.animate({scrollTop: $TargetToScroll}, 2200);
             setTimeout(() => {

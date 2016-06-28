@@ -1,5 +1,5 @@
-  $icon22: 0px 0px 0px 0px 52px 52px 108px 52px 'spritejtfoukutyb9.png';
-  $icon23: 56px 0px -56px 0px 52px 52px 108px 52px 'spritejtfoukutyb9.png';
+  $icon22: 0px 0px 0px 0px 52px 52px 108px 52px 'sprite.png';
+  $icon23: 56px 0px -56px 0px 52px 52px 108px 52px 'sprite.png';
 
   @mixin sprite-position($sprite) {
     $sprite-offset-x: nth($sprite, 3);

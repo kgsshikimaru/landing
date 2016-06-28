@@ -8,11 +8,14 @@
 .wrap__section2 {
     position: relative;
     display: flex;
+    width: 100%;
     justify-content: center;
 }
 
 .wrap__section2__tabs {
     display: flex;
+    position: relative;
+    width: 100%;
     padding-top: 10rem;
     justify-content: space-between;
 }
@@ -32,7 +35,7 @@
 }
 
 .tabs-container {
-                width: 25%;
+    width: 25%;
         h2 {
             font-family: $KlinicSlab-Bold;
             font-size: 1.875rem;
