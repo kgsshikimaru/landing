@@ -15,4 +15,19 @@ export let section6 = () => {
     });
 
 
+
+    
+
+    $('.s6-slider-container').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+    });
+
+
+
+
+
 };

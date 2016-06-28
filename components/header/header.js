@@ -43,12 +43,9 @@ $('.menu__container__navigation').on('click', 'a', scrollTo);
                 $('.login-wrapper__tabs-form__li-wrapper a[href="#tab-2"]').click()
             }, 2200)
         }
-        if ($this.attr('href') === '#my-number') {
-            $TargetToScroll = $('.s3-wrap-out h1').offset().top;
+        if ($this.attr('href') === '#show-gallery') {
+            $TargetToScroll = $('.gallery-container_a').offset().top;
             $screen.animate({scrollTop: $TargetToScroll}, 2200);
-            setTimeout(() => {
-                $('.login-wrapper__tabs-form__li-wrapper a[href="#tab-3"]').click()
-            }, 2200)
         }
 
         if ($this.attr('href') === '#ajax-button') {

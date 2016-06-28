@@ -7,27 +7,27 @@
     top: 33%;
     display: flex;
     flex-direction: column;
-    color: #fff;
+    color: #171717;
     h1 {
         font-family: $KlinicSlab-Bold;
-        font-size: 3.5rem;
-        margin: 0 0 1rem 0;
+        letter-spacing: 2px;
+        font-size: 3rem;
+        margin: 0 auto 1rem auto;
         line-height: 1.625rem;
     }
     h3 {
         font-family: $KlinicSlab-Book;
         font-size: 1.875rem;
         line-height: 1.563rem;
-        margin: 0 0 1.6rem 0;
+        margin: 0 auto 1.6rem auto;
         text-align: center;
     }
     &__wrap-a {
-        position: relative;
-        left: 29%;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 15rem;
+        margin:auto;
+        width: 10rem;
         height: 3.6rem;
         transition: .2s;
         border: .063rem solid white;
@@ -40,14 +40,17 @@
     }
     a {
         font-family: $MyriadPro-Regular;
-        font-size: 1.063rem;
+        font-size: 1.563rem;
         line-height: 3.6rem;
         display: block;
         margin: auto;
-        color: #fff;
         width: 100%;
         height: 100%;
         text-align: center;
+        transition: 0.5s;
+        &:hover {
+            color: #fff;
+        }
     }
 }
 

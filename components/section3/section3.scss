@@ -2,6 +2,9 @@
 =            Icons            =
 =============================*/
 .s3-wrap-out  {
+    img {
+
+    }
         position: relative;
         height: 100%;
     }
@@ -101,8 +104,9 @@
     h1 {
         position: relative;
         top: 3.8rem;
+        letter-spacing:3px;
         font-family: $KlinicSlab-Bold;
-        font-size: 3.563rem;
+        font-size: 3rem;
         line-height: 1.438rem;
 
         padding: 0 0 2% 0;
@@ -138,6 +142,12 @@
     border-radius: 1rem;
     box-shadow: 0 125px 167px -81px rgba(0,0,0,.6);
 }
+.s3-img-wrapper {
+    width: 100%;
+    height: auto;
+}
+.slick-dots {
+}
 /*=====  End of 3D slider  ======*/
 
 
@@ -162,10 +172,10 @@
 
 
 .game-slider-2d {
-    width: 80%;
+    width: 90%;
     height: auto;
     margin: auto;
-    padding: 1rem;
+    padding: 0 1rem;
 
     ul {
         bottom: 0;

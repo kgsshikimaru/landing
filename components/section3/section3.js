@@ -407,7 +407,7 @@ let slider3d = () => {
 
     $('#carousel').attr( 'data-carousel2d' , 'false' );
     $('.game-slider__item-2d').removeClass('game-slider__item-2d')
-        .addClass('game-slider__item cloud9-item');
+        .addClass('game-slider__item cloud9-item s3-img-wrapper');
     $("#carousel").removeClass('game-slider-2d ')
         .addClass('game-slider');
     $("#carousel").Cloud9Carousel({
@@ -434,7 +434,7 @@ let slider3d = () => {
 =================================*/
 let slider2d = () => {
     $('.container__game-slider').attr('style', '');
-    $('#carousel').removeClass('game-slider').addClass('game-slider-2d');
+    $('#carousel').removeClass('game-slider s3-img-wrapper').addClass('game-slider-2d');
     $('.game-slider__item').removeClass('game-slider__item cloud9-item')
         .addClass('game-slider__item-2d');
 
@@ -497,7 +497,7 @@ let slider2d = () => {
                 setTimeout( fixToH1position,5)
         }
     }
-    function fixBottomPosition() {
+    function fixBottomPosition(min,max) {
         let $carousel = $("#carousel");
         let [$imgs, maxPosition, maxHeight, toBottom] = [$carousel.find('img'), 0, 0, 0];
         for (let img of $imgs ) {
@@ -513,19 +513,61 @@ let slider2d = () => {
         let $containerSlider = $('.container__game-slider');
         let $ofsetTopLogin = $('.login-wrapper__tabs-form').offset().top;
 
-        if ($ofsetTopLogin < (toBottom + 10)) {
-            $containerSlider.height($containerSlider.height() + 10);
-            setTimeout( fixBottomPosition,5)
+
+        function correctPosition() {
+            if ($ofsetTopLogin < (toBottom + min)) {
+                $containerSlider.height($containerSlider.height() + 10);
+                setTimeout( () => {
+                    fixBottomPosition2d(min,max);
+                },i * 5)
+            }
+            if ($ofsetTopLogin > (toBottom + max)) {
+                $containerSlider.height($containerSlider.height() - 10);
+                setTimeout( () => {
+                    fixBottomPosition2d(min,max);
+                }, i * 5)
+            }
         }
-        if ($ofsetTopLogin > (toBottom + 21)) {
+
+
+
+
+
+
+    }
+    function fixBottomPosition2d(min,max) {
+        let $carousel = $("#carousel");
+        let [$imgs, maxPosition, maxHeight, toBottom] = [$carousel.find('img'), 0, 0, 0];
+        let $dotsPosition = $('.slick-dots').offset().top + $('.slick-dots').height();
+
+        let $containerSlider = $('.container__game-slider');
+        let $ofsetTopLogin = $('.login-wrapper__tabs-form').offset().top;
+
+        if ($ofsetTopLogin < ($dotsPosition + min)) {
+            $containerSlider.height($containerSlider.height() + 10);
+            setTimeout( () => {
+                fixBottomPosition2d(min,max);
+            },5)
+        }
+        if ($ofsetTopLogin > ($dotsPosition + max)) {
             $containerSlider.height($containerSlider.height() - 10);
-            setTimeout( fixBottomPosition,5)
+            setTimeout( () => {
+                fixBottomPosition2d(min,max);
+            },5)
         }
     }
+    let startInterval = false;
+    let interval;
+    let singleton = true;
 
 $(window).on('resize scroll', (function() {
     let [block, carousel, $carousel] = [false, document.querySelector('#carousel'), $("#carousel")];
+
     if (isVisible(carousel)) {
+        let startInterval = true;
+        if (startInterval && singleton) {
+            singleton = false;
+            interval = setInterval(() => {
         if (slider.state === '2d' && $(window).width() > 1075 && !block) {
             block = true;
             $carousel.find('img').css('position', 'absolute');
@@ -541,7 +583,7 @@ $(window).on('resize scroll', (function() {
                     block = false;
                     slider.state = form;
                     fixToH1position ();
-                    fixBottomPosition();
+                    fixBottomPosition(10, 21);
 
                 })
         }
@@ -566,8 +608,19 @@ $(window).on('resize scroll', (function() {
         }
         if (slider.state === '3d' && $(window).width() > 1075) {
             fixToH1position ();
-            fixBottomPosition();
+            fixBottomPosition(10,21);
         }
+        if (slider.state === '2d' && $(window).width() <= 1075) {
+            fixBottomPosition2d(3,15);
+        }
+                console.log('4 8 15 16 23 42');
+            },100);
+        }
+    }
+    if (!isVisible(carousel)) {
+        startInterval = false;
+        singleton = true;
+        clearInterval(interval);
     }
 
 }));
