@@ -8,7 +8,7 @@
 <!-- This make sence for mobile browsers. It means, that content has been optimized for mobile browsers -->
 <meta name="HandheldFriendly" content="true">
 
-<!--<link rel="stylesheet" href="/static/css/insertInHead.css">-->
+<link rel="stylesheet" href="/static/css/insertInHead.css">
 <!--<link rel="stylesheet" href="/static/css/main.css">-->
 
 {{#if useSocialMetaTags}}
@@ -27,18 +27,8 @@
 <!--script to connect script's only for IE ( with IE 10 & IE 11 , who not supported : &lt;!&ndash;[if lt IE <![endif]&ndash;&gt;-->
 <script>
     function addScript(u){var s=document.createElement('script');s.src=u;document.head.appendChild(s);}
-    if(window.ActiveXObject || "ActiveXObject" in window){
-        addScript('https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.9.1/polyfill.min.js');
-    }
-    var ua = navigator.userAgent.toLowerCase();
-    if (ua.indexOf('safari') != -1) {
-        if (ua.indexOf('chrome') > -1) {
-        // Chrome
-        } else {
-            addScript('https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.9.1/polyfill.min.js');// Safari
-        }
-    }
+    if(window.ActiveXObject || "ActiveXObject" in window){addScript('https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.9.1/polyfill.min.js');}
 </script>
 <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
-<script src="%=static=%js/insertInHead.js"></script>
-<script src="%=static=%js/mainScss.js"></script>
+<!--<script src="%=static=%js/insertInHead.js"></script>-->
+<!--<script src="%=static=%js/mainScss.js"></script>-->

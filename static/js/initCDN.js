@@ -15,7 +15,7 @@ import svg4everybody from 'static/js/separate-js/svg4everybody.min';
 import {arrowUpToHeader} from 'static/js/arrowUpToHeader';
 import {magnificPopup} from 'static/js/magnificPopup';
 jsCssLoader(
-   // ['/static/css/main.min.css', '/static/css/main.css'],
+    ['/static/css/main.min.css', '/static/css/main.css'],
     ['//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css', '/reservation/slick.min.css'],
     ['//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css', '/reservation/slick-theme.min.css'],
     ['//fonts.googleapis.com/css?family=Roboto:400,500,700', '/reservation/roboto.css'],
